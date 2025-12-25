@@ -1,0 +1,59 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const Footer = () => {
+    return (
+        <section className="section-padding" style={{ backgroundColor: 'var(--color-pink)', color: 'var(--color-black)' }}>
+            <div className="container text-center">
+                <h2 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', marginBottom: 'var(--spacing-lg)', lineHeight: 1.1 }}>
+                    To seek attention is easy.<br />
+                    To earn respect takes time.
+                </h2>
+
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: 'var(--spacing-xl)' }}>
+                    <button style={{
+                        padding: '1rem 2rem',
+                        fontSize: '1.1rem',
+                        backgroundColor: 'var(--color-black)',
+                        color: '#fff',
+                        borderRadius: '50px'
+                    }}>
+                        Build Your Thali
+                    </button>
+                    <button style={{
+                        padding: '1rem 2rem',
+                        fontSize: '1.1rem',
+                        border: '2px solid var(--color-black)',
+                        borderRadius: '50px'
+                    }}>
+                        Talk When You're Serious
+                    </button>
+                </div>
+
+                <motion.div
+                    style={{ padding: '2rem', borderTop: '1px solid rgba(0,0,0,0.1)', cursor: 'default' }}
+                    initial="hidden"
+                    whileHover="visible"
+                    animate="hidden"
+                    variants={{
+                        hidden: { opacity: 0.3, filter: 'blur(5px)' },
+                        visible: { opacity: 1, filter: 'blur(0px)' }
+                    }}
+                >
+                    <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Are you serious?</p>
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem' }}>
+                        <a href="mailto:hello@gensync.studio">hello@gensync.studio</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">X / Twitter</a>
+                    </div>
+                </motion.div>
+
+                <p style={{ marginTop: '2rem', fontSize: '0.8rem', opacity: 0.5 }}>
+                    © {new Date().getFullYear()} Gensync. Designed by Gensync.
+                </p>
+            </div>
+        </section>
+    );
+};
+
+export default Footer;
