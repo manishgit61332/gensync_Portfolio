@@ -106,7 +106,7 @@ const Hero = () => {
             onMouseEnter={() => setIsHoveringHero(true)}
             onMouseLeave={() => setIsHoveringHero(false)}
             style={{
-                height: '100vh',
+                minHeight: '100svh', // improved mobile height
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -114,7 +114,8 @@ const Hero = () => {
                 backgroundColor: 'var(--color-black)',
                 position: 'relative',
                 overflow: 'hidden',
-                cursor: 'none' // Hide default cursor
+                cursor: 'none', // Hide default cursor
+                paddingTop: '80px', // Navbar clearance
             }}
         >
             {/* Custom Logo Cursor */}
@@ -186,7 +187,16 @@ const Hero = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 2, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-                style={{ position: 'absolute', bottom: 'var(--spacing-md)', fontSize: '0.9rem', opacity: 0.6, zIndex: 1, cursor: 'pointer', letterSpacing: '0.5px' }}
+                transition={{ delay: 2, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+                style={{
+                    marginTop: 'auto', // Push to bottom naturally
+                    marginBottom: 'var(--spacing-md)',
+                    fontSize: '0.9rem',
+                    opacity: 0.6,
+                    zIndex: 1,
+                    cursor: 'pointer',
+                    letterSpacing: '0.5px'
+                }}
                 onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
             >
                 ↓ See what that actually looks like

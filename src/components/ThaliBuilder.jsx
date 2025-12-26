@@ -80,14 +80,18 @@ const ThaliBuilder = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 350px', gap: 'var(--spacing-md)', alignItems: 'start' }} className="thali-grid">
 
                     {/* Menu */}
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1rem', alignContent: 'start' }}>
                         {SERVICES.map(service => {
                             const isSelected = selectedIds.includes(service.id);
                             return (
                                 <motion.div
                                     key={service.id}
                                     layoutId={service.id}
-                                    onClick={() => toggleService(service.id)}
+                                    onClick={() => {
+                                        toggleService(service.id);
+                                        // Mobile Fix: Tap also triggers preview
+                                        setHoveredService(service);
+                                    }}
                                     onHoverStart={() => setHoveredService(service)}
                                     onHoverEnd={() => setHoveredService(null)}
                                     whileHover={{ y: -5, borderColor: '#D4AF37' }}
@@ -253,10 +257,21 @@ const ThaliBuilder = () => {
                 </div>
             </div>
             <style>{`
-        @media (max-width: 900px) {
-          .thali-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
+                    @media (max-width: 900px) {
+                        .thali-grid { 
+                            grid-template-columns: 1fr !important;
+                            display: flex !important;
+                            flex-direction: column-reverse; /* Show Total/Preview at TOP on mobile? No, user usually wants list then cart. Let's try natural flow but ensure sticky works or is clear */
+                            /* Actually, user feedback says "hover thing has to be re-thinked".
+                               If we put the Preview/Total at the BOTTOM (sticky), it might be better. 
+                               But the current code has it as the 2nd child. `column` puts it at bottom.
+                Let's ensure z-index and spacing.
+                */
+                flex-direction: column; 
+                        }
+                        /* On mobile, let's make the preview text clearer */
+                    }
+                `}</style>
         </section>
     );
 };

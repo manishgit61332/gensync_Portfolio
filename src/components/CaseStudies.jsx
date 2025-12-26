@@ -3,14 +3,14 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
 const projects = [
-    { id: 0, title: 'Project Alpha', category: 'SaaS', color: '#C27B7F', img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop' },
-    { id: 1, title: 'Studio Beta', category: 'Agency', color: '#6E8B3D', img: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2564&auto=format&fit=crop' },
-    { id: 2, title: 'Gamma Ventures', category: 'VC', color: '#2B4C59', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2564&auto=format&fit=crop' },
-    { id: 3, title: 'Delta Health', category: 'Wellness', color: '#D9CBAE', img: 'https://images.unsplash.com/photo-1544367563-12123d8965cd?q=80&w=2564&auto=format&fit=crop' },
-    { id: 4, title: 'Epsilon Auto', category: 'Tech', color: '#D9A55B', img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2564&auto=format&fit=crop' },
-    { id: 5, title: 'Zeta Foods', category: 'DTC', color: '#3D3D3D', img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2564&auto=format&fit=crop' },
-    { id: 6, title: 'Omega Systems', category: 'DevOps', color: '#4A5D6A', img: 'https://images.unsplash.com/photo-1558494949-efc02570fbc9?q=80&w=2564&auto=format&fit=crop' },
-    { id: 7, title: 'Theta Labs', category: 'Web3', color: '#8C4B3C', img: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2564&auto=format&fit=crop' },
+    { id: 0, title: 'Project Alpha', category: 'SaaS', color: '#C27B7F', img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop', link: '#' },
+    { id: 1, title: 'Studio Beta', category: 'Agency', color: '#6E8B3D', img: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2564&auto=format&fit=crop', link: '#' },
+    { id: 2, title: 'Gamma Ventures', category: 'VC', color: '#2B4C59', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2564&auto=format&fit=crop', link: '#' },
+    { id: 3, title: 'Delta Health', category: 'Wellness', color: '#D9CBAE', img: 'https://images.unsplash.com/photo-1544367563-12123d8965cd?q=80&w=2564&auto=format&fit=crop', link: '#' },
+    { id: 4, title: 'Epsilon Auto', category: 'Tech', color: '#D9A55B', img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2564&auto=format&fit=crop', link: '#' },
+    { id: 5, title: 'Zeta Foods', category: 'DTC', color: '#3D3D3D', img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2564&auto=format&fit=crop', link: '#' },
+    { id: 6, title: 'Omega Systems', category: 'DevOps', color: '#4A5D6A', img: 'https://images.unsplash.com/photo-1558494949-efc02570fbc9?q=80&w=2564&auto=format&fit=crop', link: '#' },
+    { id: 7, title: 'Theta Labs', category: 'Web3', color: '#8C4B3C', img: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2564&auto=format&fit=crop', link: '#' },
 ];
 
 const CaseStudies = () => {
@@ -154,12 +154,13 @@ const CaseStudies = () => {
                                 {project.category}
                             </span>
                         </div>
-                        <motion.div
+                        <motion.a
+                            href={project.link}
                             whileHover={{ scale: 1.2, rotate: 45, backgroundColor: 'rgba(255,255,255,0.2)' }}
-                            style={{ padding: '0.5rem', borderRadius: '50%', cursor: 'pointer' }}
+                            style={{ padding: '0.5rem', borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}
                         >
                             <ArrowUpRight size={32} />
-                        </motion.div>
+                        </motion.a>
                     </div>
 
 
