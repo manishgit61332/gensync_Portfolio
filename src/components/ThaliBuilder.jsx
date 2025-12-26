@@ -1,24 +1,27 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { Plus, X, Utensils, Info, Layout, PenTool, Video, Laptop, Megaphone, Smartphone, RefreshCw, Eye } from 'lucide-react';
 
 // Enhanced Services List with Preview Colors/Placeholders
 const SERVICES = [
     // Staples
-    { id: 'web-design', category: 'Staples', name: 'Website Design', price: 4000, time: 14, desc: 'High-converting, premium aesthetic.', icon: <Layout size={20} />, previewColor: '#D4AF37', previewText: 'Minimalist Layouts', textColor: '#000' },
-    { id: 'brand-id', category: 'Staples', name: 'Brand Identity', price: 3000, time: 10, desc: 'Logo, colors, typography system.', icon: <PenTool size={20} />, previewColor: '#8B4513', previewText: 'Bold Typography', textColor: '#fff' },
-    { id: 'rebranding', category: 'Staples', name: 'Rebranding', price: 5000, time: 20, desc: 'Complete visual overhaul.', icon: <RefreshCw size={20} />, previewColor: '#0a1f0a', previewText: 'Fresh Start', textColor: '#fff' },
+    { id: 'web-design', category: 'Staples', name: 'Website Design', price: 1800, time: 14, desc: 'High-converting, premium aesthetic.', icon: <Layout size={20} />, previewColor: '#D4AF37', previewText: 'Minimalist Layouts', textColor: '#000' },
+    { id: 'brand-id', category: 'Staples', name: 'Brand Identity', price: 1200, time: 10, desc: 'Logo, colors, typography system.', icon: <PenTool size={20} />, previewColor: '#8B4513', previewText: 'Bold Typography', textColor: '#fff' },
+    { id: 'rebranding', category: 'Staples', name: 'Rebranding', price: 2500, time: 20, desc: 'Complete visual overhaul.', icon: <RefreshCw size={20} />, previewColor: '#0a1f0a', previewText: 'Fresh Start', textColor: '#fff' },
 
     // Content (Flavour)
-    { id: 'linkedin', category: 'Flavour', name: 'LinkedIn Content', price: 1500, time: 0, desc: 'Thought leadership ghostwriting (Monthly).', icon: <Laptop size={20} />, previewColor: '#D4AF37', previewText: 'Viral Threads', textColor: '#000' },
-    { id: 'video-edit', category: 'Flavour', name: 'Video Editing', price: 2000, time: 0, desc: 'Short-form reels & edits (Monthly).', icon: <Video size={20} />, previewColor: '#C5A028', previewText: 'Dynamic Cuts', textColor: '#000' },
-    { id: 'commercials', category: 'Flavour', name: 'AI Commercials', price: 2500, time: 7, desc: 'Hyper-realistic product films.', icon: <Megaphone size={20} />, previewColor: '#333', previewText: 'Cinematic AI', textColor: '#fff' },
+    { id: 'linkedin', category: 'Flavour', name: 'LinkedIn Content', price: 800, time: 0, desc: 'Thought leadership ghostwriting (Monthly).', icon: <Laptop size={20} />, previewColor: '#D4AF37', previewText: 'Viral Threads', textColor: '#000' },
+    { id: 'video-edit', category: 'Flavour', name: 'Video Editing', price: 1000, time: 0, desc: 'Short-form reels & edits (Monthly).', icon: <Video size={20} />, previewColor: '#C5A028', previewText: 'Dynamic Cuts', textColor: '#000' },
+    { id: 'commercials', category: 'Flavour', name: 'AI Commercials', price: 1200, time: 7, desc: 'Hyper-realistic product films.', icon: <Megaphone size={20} />, previewColor: '#333', previewText: 'Cinematic AI', textColor: '#fff' },
 
     // Mobile/Scale (Power)
-    { id: 'app-design', category: 'Power', name: 'Mobile App Design', price: 4500, time: 21, desc: 'UI/UX that feels native.', icon: <Smartphone size={20} />, previewColor: '#D4AF37', previewText: 'Smooth UX', textColor: '#000' },
+    { id: 'app-design', category: 'Power', name: 'Mobile App Design', price: 2200, time: 21, desc: 'UI/UX that feels native.', icon: <Smartphone size={20} />, previewColor: '#D4AF37', previewText: 'Smooth UX', textColor: '#000' },
 ];
 
 const ThaliBuilder = () => {
+    // ... (state vars same)
+    const navigate = useNavigate();
     const [selectedIds, setSelectedIds] = useState([]);
     const [hoveredService, setHoveredService] = useState(null);
     const [showHint, setShowHint] = useState(false);
@@ -38,14 +41,15 @@ const ThaliBuilder = () => {
     }, [selectedIds]);
 
     return (
-        <section className="section-padding" style={{
-            // CULTURAL AESTHETIC: Banana Leaf Gradient
+        <section id="thali" className="section-padding" style={{
+            // ... styles
             background: 'linear-gradient(to bottom, #0a1f0a, #1a4d1a)',
             color: 'var(--color-white)',
             position: 'relative',
             paddingTop: 'var(--spacing-xl)',
             borderTop: 'none'
         }}>
+            {/* ... container/title/hint code ... */}
             <div className="container">
                 {/* Brass/Gold Accent for Title */}
                 <h2 className="text-center" style={{ marginBottom: 'var(--spacing-sm)', color: '#D4AF37', fontFamily: 'var(--font-heading)' }}>Build Your Thali.</h2>
@@ -89,23 +93,16 @@ const ThaliBuilder = () => {
                                     layoutId={service.id}
                                     onClick={() => {
                                         toggleService(service.id);
-                                        setHoveredService(service);
+                                        // setHoveredService(service); // No hover needed if hiding preview? Keep purely for internal logic if needed, but removing active "hover" effect request.
                                     }}
-                                    onHoverStart={() => setHoveredService(service)}
-                                    // onHoverEnd only clears if we are on desktop (rudimentary check or handled via CSS display logic, but state clearing hides inline too)
-                                    // Make click "sticky" for inline preview. 
-                                    onHoverEnd={() => {
-                                        // If it's touch device-ish (or small screen), don't clear.
-                                        if (window.innerWidth > 900) setHoveredService(null);
-                                    }}
+                                    // onHoverStart={() => setHoveredService(service)}
+                                    // onHoverEnd={() => setHoveredService(null)} 
                                     whileHover={{ y: -5, borderColor: '#D4AF37' }}
                                     style={{
                                         padding: '1.5rem',
                                         borderRadius: '12px',
-                                        // Border Color: Brass for Selected, Subtle for Unselected
                                         border: `1px solid ${isSelected ? '#D4AF37' : 'rgba(212, 175, 55, 0.1)'}`,
                                         cursor: 'pointer',
-                                        // Background: Glassmorphism with slight green tint
                                         backgroundColor: isSelected ? 'rgba(212, 175, 55, 0.1)' : 'rgba(255,255,255,0.03)',
                                         transition: 'all 0.2s ease',
                                         display: 'flex',
@@ -116,8 +113,6 @@ const ThaliBuilder = () => {
                                     }}
                                 >
                                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
-
-                                        {/* Icon Container - Brass Theme */}
                                         <div style={{
                                             width: '40px', height: '40px',
                                             backgroundColor: isSelected ? '#D4AF37' : 'rgba(212, 175, 55, 0.1)',
@@ -138,42 +133,7 @@ const ThaliBuilder = () => {
 
                                     <div style={{ fontWeight: 'bold', marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                         <span style={{ color: '#D4AF37' }}>${service.price.toLocaleString()}</span>
-                                        <motion.div
-                                            initial={{ opacity: 0 }}
-                                            animate={{ opacity: hoveredService?.id === service.id ? 1 : 0 }}
-                                            style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.8rem', color: '#D4AF37' }}
-                                        >
-                                            <Eye size={14} /> Preview
-                                        </motion.div>
                                     </div>
-
-                                    {/* MOBILE INLINE PREVIEW */}
-                                    <AnimatePresence>
-                                        {(hoveredService?.id === service.id) && (
-                                            <motion.div
-                                                initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                                                animate={{ height: 'auto', opacity: 1, marginTop: '1rem' }}
-                                                exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                                                className="mobile-inline-preview"
-                                                style={{ overflow: 'hidden' }}
-                                            >
-                                                <div style={{
-                                                    padding: '1rem',
-                                                    backgroundColor: service.previewColor,
-                                                    color: service.textColor,
-                                                    borderRadius: '8px',
-                                                    display: 'flex',
-                                                    flexDirection: 'column',
-                                                    alignItems: 'center',
-                                                    textAlign: 'center',
-                                                    border: '1px solid rgba(255,255,255,0.1)'
-                                                }}>
-                                                    <div style={{ marginBottom: '0.25rem' }}>{service.icon}</div>
-                                                    <h5 style={{ fontSize: '1rem', fontFamily: 'var(--font-heading)' }}>{service.previewText}</h5>
-                                                </div>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
                                 </motion.div>
                             );
                         })}
@@ -181,53 +141,8 @@ const ThaliBuilder = () => {
 
                     {/* The Plate / Receipt / Preview (Desktop Sticky) */}
                     <div className="desktop-preview-panel" style={{ position: 'sticky', top: '100px', display: 'flex', flexDirection: 'column', gap: '1rem', zIndex: 900 }}>
-
-                        {/* Dynamic Preview Card */}
-                        <AnimatePresence mode="wait">
-                            {hoveredService ? (
-                                <motion.div
-                                    key={hoveredService.id}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -20 }}
-                                    style={{
-                                        height: '200px',
-                                        backgroundColor: hoveredService.previewColor,
-                                        color: hoveredService.textColor,
-                                        borderRadius: '16px',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        flexDirection: 'column',
-                                        boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
-                                        border: '1px solid rgba(255,255,255,0.1)'
-                                    }}
-                                >
-                                    <div style={{ marginBottom: '0.5rem' }}>{hoveredService.icon}</div>
-                                    <h3 style={{ fontSize: '1.5rem', textAlign: 'center', fontFamily: 'var(--font-heading)' }}>{hoveredService.previewText}</h3>
-                                    <p style={{ opacity: 0.8, fontSize: '0.9rem' }}>Example Work</p>
-                                </motion.div>
-                            ) : (
-                                <motion.div
-                                    key="default-preview"
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    style={{
-                                        height: '200px',
-                                        backgroundColor: 'rgba(255,255,255,0.05)',
-                                        borderRadius: '16px',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: 'rgba(255,255,255,0.4)',
-                                        border: '1px dashed rgba(255,255,255,0.2)'
-                                    }}
-                                >
-                                    <p>Hover a service to preview work</p>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
+                        {/* Hidden Preview Card */}
+                        <div style={{ display: 'none' }}></div>
 
                         <div style={{ backgroundColor: '#fff', color: '#000', padding: '2rem', borderRadius: '16px', boxShadow: '0 20px 40px rgba(0,0,0,0.2)', border: '2px solid #D4AF37' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem' }}>
@@ -269,18 +184,24 @@ const ThaliBuilder = () => {
                                 </div>
                             </div>
 
-                            <button style={{
-                                width: '100%',
-                                backgroundColor: '#0a1f0a',
-                                color: '#D4AF37',
-                                padding: '1rem',
-                                borderRadius: '8px',
-                                marginTop: '2rem',
-                                fontSize: '1rem',
-                                // Brass Border
-                                border: '1px solid #D4AF37',
-                                transition: 'transform 0.1s'
-                            }}>
+                            <button
+                                onClick={() => {
+                                    const selected = SERVICES.filter(s => selectedIds.includes(s.id));
+                                    navigate('/checkout', { state: { selectedServices: selected, totalBudget } });
+                                }}
+                                style={{
+                                    width: '100%',
+                                    backgroundColor: '#0a1f0a',
+                                    color: '#D4AF37',
+                                    padding: '1rem',
+                                    borderRadius: '8px',
+                                    marginTop: '2rem',
+                                    fontSize: '1rem',
+                                    // Brass Border
+                                    border: '1px solid #D4AF37',
+                                    transition: 'transform 0.1s',
+                                    cursor: 'pointer'
+                                }}>
                                 Book This Thali
                             </button>
                         </div>

@@ -92,7 +92,7 @@ const Navbar = () => {
                                 <div style={{ display: 'flex', gap: '2rem' }}>
                                     <button onClick={() => scrollToSection('work')} style={{ color: '#fff', fontSize: '0.9rem' }}>Work</button>
                                     <button onClick={() => scrollToSection('thali')} style={{ color: '#fff', fontSize: '0.9rem' }}>Build Thali</button>
-                                    <button onClick={() => scrollToSection('contact')} style={{ color: '#fff', fontSize: '0.9rem' }}>Contact</button>
+                                    <button onClick={() => window.open('https://calendly.com/manish-gensync/30min', '_blank')} style={{ color: '#fff', fontSize: '0.9rem' }}>Contact</button>
                                 </div>
                             )}
 
@@ -141,7 +141,7 @@ const Navbar = () => {
                     >
                         <button onClick={() => scrollToSection('work')} style={{ color: '#fff', fontSize: '2rem', fontFamily: 'var(--font-heading)' }}>Work</button>
                         <button onClick={() => scrollToSection('thali')} style={{ color: '#fff', fontSize: '2rem', fontFamily: 'var(--font-heading)' }}>Build Thali</button>
-                        <button onClick={() => scrollToSection('contact')} style={{ color: '#fff', fontSize: '2rem', fontFamily: 'var(--font-heading)' }}>Contact</button>
+                        <button onClick={() => window.open('https://calendly.com/manish-gensync/30min', '_blank')} style={{ color: '#fff', fontSize: '2rem', fontFamily: 'var(--font-heading)' }}>Contact</button>
                     </motion.div>
                 )}
             </AnimatePresence>

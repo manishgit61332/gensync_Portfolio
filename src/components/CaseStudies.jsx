@@ -152,12 +152,24 @@ const CaseStudies = () => {
                                 {project.category}
                             </span>
                         </div>
+                        {/* Make the whole card clickable? User said "make the buttons work". The arrow button is best. */}
                         <motion.a
                             href={project.link}
-                            whileHover={{ scale: 1.2, rotate: 45, backgroundColor: 'rgba(255,255,255,0.2)' }}
-                            style={{ padding: '0.5rem', borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.1, backgroundColor: 'rgba(255,255,255,0.2)' }}
+                            style={{
+                                padding: '0.8rem',
+                                borderRadius: '50%',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: '#fff',
+                                border: '1px solid rgba(255,255,255,0.2)'
+                            }}
                         >
-                            <ArrowUpRight size={32} />
+                            <ArrowUpRight size={28} />
                         </motion.a>
                     </div>
 
@@ -177,7 +189,7 @@ const CaseStudies = () => {
     };
 
     return (
-        <section ref={containerRef} style={{ height: '400vh', position: 'relative', backgroundColor: 'var(--color-black)', color: 'var(--color-white)' }}>
+        <section id="work" ref={containerRef} style={{ height: '400vh', position: 'relative', backgroundColor: 'var(--color-black)', color: 'var(--color-white)' }}>
 
             <div className="sticky-wrapper" style={{ position: 'sticky', top: 0, height: '100vh', display: 'block', overflow: 'hidden', padding: '0 2rem', paddingTop: '10rem' }}>
 

@@ -29,7 +29,10 @@ const Pricing = () => {
                             <li style={{ display: 'flex', gap: '0.5rem' }}><Check size={20} /> Pause or Cancel Anytime</li>
                         </ul>
 
-                        <button style={{ width: '100%', padding: '1rem', backgroundColor: 'var(--color-orange)', color: '#000', fontWeight: 'bold', borderRadius: '8px', marginTop: '2rem' }}>
+                        <button
+                            onClick={() => document.getElementById('thali')?.scrollIntoView({ behavior: 'smooth' })}
+                            style={{ width: '100%', padding: '1rem', backgroundColor: 'var(--color-orange)', color: '#000', fontWeight: 'bold', borderRadius: '8px', marginTop: '2rem', cursor: 'pointer' }}
+                        >
                             Start Trial
                         </button>
                     </motion.div>
@@ -50,7 +53,10 @@ const Pricing = () => {
                             <li style={{ display: 'flex', gap: '0.5rem' }}><Check size={20} /> Fixed Pricing</li>
                         </ul>
 
-                        <button style={{ width: '100%', padding: '1rem', backgroundColor: 'transparent', border: '1px solid var(--color-orange)', color: 'var(--color-orange)', fontWeight: 'bold', borderRadius: '8px', marginTop: '2rem' }}>
+                        <button
+                            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                            style={{ width: '100%', padding: '1rem', backgroundColor: 'transparent', border: '1px solid var(--color-orange)', color: 'var(--color-orange)', fontWeight: 'bold', borderRadius: '8px', marginTop: '2rem', cursor: 'pointer' }}
+                        >
                             Book Call
                         </button>
                     </motion.div>

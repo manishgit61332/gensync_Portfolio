@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Footer = () => {
     return (
-        <section className="section-padding" style={{ backgroundColor: 'var(--color-pink)', color: 'var(--color-black)' }}>
+        <section id="contact" className="section-padding" style={{ backgroundColor: 'var(--color-pink)', color: 'var(--color-black)' }}>
             <div className="container text-center">
                 <h2 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', marginBottom: 'var(--spacing-lg)', lineHeight: 1.1 }}>
                     To seek attention is easy.<br />
@@ -11,21 +11,29 @@ const Footer = () => {
                 </h2>
 
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: 'var(--spacing-xl)' }}>
-                    <button style={{
-                        padding: '1rem 2rem',
-                        fontSize: '1.1rem',
-                        backgroundColor: 'var(--color-black)',
-                        color: '#fff',
-                        borderRadius: '50px'
-                    }}>
+                    <button
+                        onClick={() => document.getElementById('thali')?.scrollIntoView({ behavior: 'smooth' })}
+                        style={{
+                            padding: '1rem 2rem',
+                            fontSize: '1.1rem',
+                            backgroundColor: 'var(--color-black)',
+                            color: '#fff',
+                            borderRadius: '50px',
+                            cursor: 'pointer'
+                        }}
+                    >
                         Build Your Thali
                     </button>
-                    <button style={{
-                        padding: '1rem 2rem',
-                        fontSize: '1.1rem',
-                        border: '2px solid var(--color-black)',
-                        borderRadius: '50px'
-                    }}>
+                    <button
+                        onClick={() => window.open('https://calendly.com/manish-gensync/30min', '_blank')}
+                        style={{
+                            padding: '1rem 2rem',
+                            fontSize: '1.1rem',
+                            border: '2px solid var(--color-black)',
+                            borderRadius: '50px',
+                            cursor: 'pointer'
+                        }}
+                    >
                         Talk When You're Serious
                     </button>
                 </div>
@@ -42,7 +50,7 @@ const Footer = () => {
                 >
                     <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Are you serious?</p>
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem' }}>
-                        <a href="mailto:hello@gensync.studio">hello@gensync.studio</a>
+                        <a href="mailto:contact@gensync.com">contact@gensync.com</a>
                         <a href="#">LinkedIn</a>
                         <a href="#">X / Twitter</a>
                     </div>
