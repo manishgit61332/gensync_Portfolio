@@ -89,11 +89,15 @@ const ThaliBuilder = () => {
                                     layoutId={service.id}
                                     onClick={() => {
                                         toggleService(service.id);
-                                        // Mobile Fix: Tap also triggers preview
                                         setHoveredService(service);
                                     }}
                                     onHoverStart={() => setHoveredService(service)}
-                                    onHoverEnd={() => setHoveredService(null)}
+                                    // onHoverEnd only clears if we are on desktop (rudimentary check or handled via CSS display logic, but state clearing hides inline too)
+                                    // Make click "sticky" for inline preview. 
+                                    onHoverEnd={() => {
+                                        // If it's touch device-ish (or small screen), don't clear.
+                                        if (window.innerWidth > 900) setHoveredService(null);
+                                    }}
                                     whileHover={{ y: -5, borderColor: '#D4AF37' }}
                                     style={{
                                         padding: '1.5rem',
@@ -142,13 +146,41 @@ const ThaliBuilder = () => {
                                             <Eye size={14} /> Preview
                                         </motion.div>
                                     </div>
+
+                                    {/* MOBILE INLINE PREVIEW */}
+                                    <AnimatePresence>
+                                        {(hoveredService?.id === service.id) && (
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                                                animate={{ height: 'auto', opacity: 1, marginTop: '1rem' }}
+                                                exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                                                className="mobile-inline-preview"
+                                                style={{ overflow: 'hidden' }}
+                                            >
+                                                <div style={{
+                                                    padding: '1rem',
+                                                    backgroundColor: service.previewColor,
+                                                    color: service.textColor,
+                                                    borderRadius: '8px',
+                                                    display: 'flex',
+                                                    flexDirection: 'column',
+                                                    alignItems: 'center',
+                                                    textAlign: 'center',
+                                                    border: '1px solid rgba(255,255,255,0.1)'
+                                                }}>
+                                                    <div style={{ marginBottom: '0.25rem' }}>{service.icon}</div>
+                                                    <h5 style={{ fontSize: '1rem', fontFamily: 'var(--font-heading)' }}>{service.previewText}</h5>
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
                                 </motion.div>
                             );
                         })}
                     </div>
 
-                    {/* The Plate / Receipt / Preview */}
-                    <div style={{ position: 'sticky', top: '100px', display: 'flex', flexDirection: 'column', gap: '1rem', zIndex: 900 }}>
+                    {/* The Plate / Receipt / Preview (Desktop Sticky) */}
+                    <div className="desktop-preview-panel" style={{ position: 'sticky', top: '100px', display: 'flex', flexDirection: 'column', gap: '1rem', zIndex: 900 }}>
 
                         {/* Dynamic Preview Card */}
                         <AnimatePresence mode="wait">
