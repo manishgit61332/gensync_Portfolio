@@ -38,13 +38,14 @@ const Distribution = () => {
                 }}>
 
                     {/* Responsive Layout Wrapper */}
-                    <div className="distribution-diagram" style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-md)' }}>
+                    <div className="distribution-diagram" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 
                         {/* 1. Content Idea */}
                         <motion.div
                             style={{
                                 width: '160px',
                                 height: '160px',
+                                flexShrink: 0, // Prevent squish
                                 borderRadius: '50%',
                                 border: '1px solid rgba(255, 255, 255, 0.15)',
                                 backgroundColor: 'rgba(255, 255, 255, 0.03)',
@@ -62,15 +63,15 @@ const Distribution = () => {
                             <span style={{ fontSize: '0.9rem', marginTop: '0.5rem', fontWeight: 600, opacity: 0.9 }}>Content Idea</span>
                         </motion.div>
 
-                        {/* 2. Arrow (Responsive Rotate) */}
-                        <div className="arrow-wrapper">
-                            <ArrowRight color="var(--color-orange)" size={40} />
+                        {/* 2. Arrow (Responsive Rotate) - Flex Centered */}
+                        <div className="arrow-wrapper" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <ArrowRight color="var(--color-orange)" size={48} strokeWidth={1.5} />
                         </div>
 
                         {/* 3. Distribution Grid */}
                         <div style={{
                             display: 'grid',
-                            gridTemplateColumns: '1fr 1fr',
+                            gridTemplateColumns: 'repeat(2, 1fr)',
                             gap: '1.5rem',
                             padding: '2rem',
                             borderRadius: '24px',
@@ -84,6 +85,10 @@ const Distribution = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: i * 0.1 }}
                                     style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        height: '100%',
                                         padding: '1rem 2rem',
                                         backgroundColor: 'rgba(255,255,255,0.05)',
                                         color: '#fff',
@@ -91,7 +96,7 @@ const Distribution = () => {
                                         textAlign: 'center',
                                         minWidth: '140px',
                                         fontWeight: 500,
-                                        fontSize: '0.95rem',
+                                        fontSize: '1rem',
                                         border: '1px solid transparent'
                                     }}
                                     whileHover={{ backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.2)' }}
@@ -106,18 +111,21 @@ const Distribution = () => {
                 <style>{`
                     .distribution-diagram {
                         flex-direction: column;
+                        gap: 2rem;
                     }
                     .arrow-wrapper {
                         transform: rotate(90deg);
-                        margin: 1rem 0;
+                        width: 60px;
+                        height: 60px;
                     }
-                    @media (min-width: 768px) {
+                    @media (min-width: 900px) { /* Increased breakpoint for safety */
                         .distribution-diagram {
                             flex-direction: row;
+                            gap: 3rem; /* Symmetric Gap */
                         }
                         .arrow-wrapper {
                             transform: rotate(0deg);
-                            margin: 0 2rem;
+                            /* No margin, relying on flex gap */
                         }
                     }
                 `}</style>
