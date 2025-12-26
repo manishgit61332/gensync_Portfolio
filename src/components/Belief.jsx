@@ -12,7 +12,7 @@ const Belief = () => {
                     transition={{ duration: 0.8 }}
                 >
                     {/* UPDATED: Focus on ROI/Scale/Taste */}
-                    <h2 style={{ fontSize: '3rem', marginBottom: '2rem', lineHeight: 1.1 }}>
+                    <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '2rem', lineHeight: 1.1 }}>
                         <motion.span initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
                             Most B2B Marketing
                         </motion.span>
@@ -27,7 +27,7 @@ const Belief = () => {
                         </motion.span>
                     </h2>
 
-                    <p style={{ fontSize: '1.5rem', lineHeight: 1.4, marginBottom: '2rem' }}>
+                    <p style={{ fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', lineHeight: 1.4, marginBottom: '2rem' }}>
                         Stop posting generic LinkedIn carousels.<br />
                         Stop hiring "safe" designers.<br />
                         <span style={{ color: '#000', fontWeight: 'bold' }}>We exist to make you dangerous.</span>

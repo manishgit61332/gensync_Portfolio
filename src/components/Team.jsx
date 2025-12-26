@@ -10,7 +10,7 @@ const Team = () => {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    style={{ marginBottom: 'var(--spacing-lg)', fontSize: '3rem' }}
+                    style={{ marginBottom: 'var(--spacing-lg)', fontSize: 'clamp(2rem, 4vw, 3rem)' }}
                 >
                     Credibility isn't an accident.
                 </motion.h2>

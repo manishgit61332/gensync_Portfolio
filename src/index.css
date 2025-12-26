@@ -21,6 +21,15 @@
   --spacing-xl: 8rem;
 }
 
+@media (max-width: 768px) {
+  :root {
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 5rem;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

@@ -156,7 +156,7 @@ const Hero = () => {
                     <LiquidText text="Trusted by 15+ Visionaries & Founders" config={{ y: -5, scaleY: 1.2, scaleX: 0.9, color: 'var(--color-mint)' }} />
                 </motion.div>
 
-                <h1 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', marginBottom: '2rem', lineHeight: 1.1 }}>
+                <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)', marginBottom: '2rem', lineHeight: 1.1 }}>
                     <span style={{ color: '#fff' }}>
                         <LiquidText text="We Engineer" /> <GlitchWord />
                     </span>

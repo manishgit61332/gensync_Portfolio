@@ -7,7 +7,7 @@ const QuoteBlock = ({ quote, author, interpretation, delay }) => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay, duration: 0.6 }}
-        style={{ flex: 1, minWidth: '300px', display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sm)' }}
+        style={{ flex: '1 1 300px', minWidth: 'min(100%, 300px)', display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sm)' }}
     >
         <blockquote style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem', lineHeight: 1.2 }}>
             "{quote}"

@@ -8,7 +8,7 @@ const Pricing = () => {
         <section className="section-padding" style={{ backgroundColor: 'var(--color-maroon)', color: 'var(--color-pink)' }}>
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: 'var(--spacing-lg)' }}>
-                    <h2 style={{ color: '#fff', fontSize: '3rem' }}>Simple Models. <span style={{ color: 'var(--color-orange)' }}>Complex Output.</span></h2>
+                    <h2 style={{ color: '#fff', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Simple Models. <span style={{ color: 'var(--color-orange)' }}>Complex Output.</span></h2>
                     <p style={{ opacity: 0.9 }}>Stop paying for headcount. Start paying for velocity.</p>
                 </div>
 
