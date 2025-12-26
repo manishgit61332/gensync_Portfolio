@@ -293,13 +293,7 @@ const ThaliBuilder = () => {
                         .thali-grid { 
                             grid-template-columns: 1fr !important;
                             display: flex !important;
-                            flex-direction: column-reverse; /* Show Total/Preview at TOP on mobile? No, user usually wants list then cart. Let's try natural flow but ensure sticky works or is clear */
-                            /* Actually, user feedback says "hover thing has to be re-thinked".
-                               If we put the Preview/Total at the BOTTOM (sticky), it might be better. 
-                               But the current code has it as the 2nd child. `column` puts it at bottom.
-                Let's ensure z-index and spacing.
-                */
-                flex-direction: column; 
+                            flex-direction: column; 
                         }
                         /* On mobile, let's make the preview text clearer */
                     }

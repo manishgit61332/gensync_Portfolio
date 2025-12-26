@@ -73,7 +73,6 @@ const CaseStudies = () => {
         // Content Reveal based on width - Overlapped to prevent empty state
         const textOpacity = useTransform(widthPercent, [12, 25], [1, 0]);
         const contentOpacity = useTransform(widthPercent, [20, 40], [0, 1]);
-        const contentY = useTransform(widthPercent, [20, 45], [20, 0]);
 
         return (
             <motion.div
@@ -88,7 +87,6 @@ const CaseStudies = () => {
                     overflow: 'hidden',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
                     justifyContent: 'center',
                     boxShadow: cardShadow,
                     y: yTranslation,
