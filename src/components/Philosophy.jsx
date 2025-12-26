@@ -14,7 +14,7 @@ const QuoteBlock = ({ quote, author, interpretation, delay }) => (
         </blockquote>
         <cite style={{ fontSize: '0.9rem', opacity: 0.6, fontStyle: 'normal' }}>— {author}</cite>
         <div style={{ width: '100%', height: '1px', backgroundColor: 'rgba(255,255,255,0.2)', marginTop: 'auto', marginBottom: 'var(--spacing-sm)' }}></div>
-        <p style={{ fontSize: '1rem', opacity: 0.8 }}>{interpretation}</p>
+        <p style={{ fontSize: '1rem', opacity: 0.8, minHeight: '60px' }}>{interpretation}</p>
     </motion.div>
 );
 
