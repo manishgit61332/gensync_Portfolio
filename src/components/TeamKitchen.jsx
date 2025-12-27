@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import { motion, useSpring, useTransform } from 'framer-motion';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 import team1 from '../assets/team_cutout_1.png';
 import team2 from '../assets/team_cutout_2.png';
@@ -16,91 +16,120 @@ const TEAM = [
 ];
 
 const TeamKitchen = () => {
+    const containerRef = useRef(null);
+    const [activeImg, setActiveImg] = useState(null);
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+
+    // Mouse Physics
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    const springConfig = { stiffness: 1000, damping: 50 };
+    const x = useSpring(mouseX, springConfig);
+    const y = useSpring(mouseY, springConfig);
+
+    const handleMouseMove = (e) => {
+        if (!containerRef.current) return;
+        const rect = containerRef.current.getBoundingClientRect();
+        mouseX.set(e.clientX - rect.left);
+        mouseY.set(e.clientY - rect.top);
+    };
+
     return (
-        <section className="section-padding" style={{ backgroundColor: '#050505', color: '#fff', position: 'relative' }}>
-            <div className="container">
-                <div style={{ marginBottom: '6rem', textAlign: 'center' }}>
+        <section
+            ref={containerRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={() => { setActiveImg(null); setHoveredIndex(null); }}
+            className="section-padding"
+            style={{
+                backgroundColor: '#050505',
+                color: '#fff',
+                position: 'relative',
+                minHeight: '80vh',
+                cursor: 'none', // Custom cursor feel
+                overflow: 'hidden'
+            }}
+        >
+            <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+                <div style={{ marginBottom: '6rem' }}>
                     <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontFamily: 'var(--font-heading)' }}>
-                        The Kitchen.
+                        The Lens.
                     </h2>
                     <p style={{ opacity: 0.6, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.8rem' }}>
-                        Sensor Array Active
+                        Hover to inspect
                     </p>
                 </div>
 
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                    gap: '2px', // Tight grid
-                    backgroundColor: 'rgba(255,255,255,0.1)',
-                    border: '1px solid rgba(255,255,255,0.1)'
-                }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                     {TEAM.map((member, i) => (
-                        <SensorCell key={i} member={member} index={i} />
+                        <motion.div
+                            key={i}
+                            onMouseEnter={() => { setActiveImg(member.img); setHoveredIndex(i); }}
+                            style={{
+                                padding: '2rem 0',
+                                width: '100%',
+                                borderBottom: '1px solid rgba(255,255,255,0.1)',
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                                position: 'relative',
+                                zIndex: 20,
+                                mixBlendMode: 'difference' // Cool inversion interaction
+                            }}
+                            animate={{ opacity: hoveredIndex !== null && hoveredIndex !== i ? 0.3 : 1 }}
+                        >
+                            <h3 style={{ fontSize: '3rem', fontFamily: 'var(--font-heading)', margin: 0 }}>
+                                {member.name}
+                            </h3>
+                            <div style={{ textAlign: 'right' }}>
+                                <div style={{ textTransform: 'uppercase', letterSpacing: '1px', fontSize: '0.9rem' }}>{member.role}</div>
+                                <div style={{ fontSize: '2rem', fontStyle: 'italic', opacity: 0.5 }}>"{member.quote}"</div>
+                            </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
-        </section>
-    );
-};
 
-const SensorCell = ({ member, index }) => {
-    const [isHovered, setIsHovered] = useState(false);
-
-    // Initial State: Blurry, Dark, "Unfocused"
-    return (
-        <motion.div
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            style={{
-                aspectRatio: '1/1',
-                backgroundColor: '#000',
-                position: 'relative',
-                overflow: 'hidden',
-                cursor: 'crosshair',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-            }}
-        >
-            {/* GRID LINES */}
-            <div style={{ position: 'absolute', inset: 0, border: '1px solid rgba(255,255,255,0.05)', pointerEvents: 'none' }} />
-
-            {/* CROSSHAIR CORNERS */}
-            <div style={{ position: 'absolute', top: 10, left: 10, width: 10, height: 10, borderTop: '1px solid #333', borderLeft: '1px solid #333' }} />
-            <div style={{ position: 'absolute', bottom: 10, right: 10, width: 10, height: 10, borderBottom: '1px solid #333', borderRight: '1px solid #333' }} />
-
-            {/* IMAGE: Unfocused by default */}
-            <motion.img
-                src={member.img}
-                animate={{
-                    filter: isHovered ? 'blur(0px) grayscale(0%)' : 'blur(10px) grayscale(100%)',
-                    scale: isHovered ? 1.1 : 0.9,
-                    opacity: isHovered ? 1 : 0.3
-                }}
-                transition={{ duration: 0.4, ease: 'easeOut' }}
-                style={{ width: '80%', height: '80%', objectFit: 'contain' }}
-            />
-
-            {/* HUD OVERLAY (Only on Focus) */}
+            {/* THE LENS (Follows Mouse) */}
             <motion.div
-                animate={{ opacity: isHovered ? 1 : 0 }}
                 style={{
                     position: 'absolute',
-                    bottom: '20px',
-                    left: '20px',
-                    fontFamily: 'monospace',
-                    color: '#D4AF37',
-                    textTransform: 'uppercase',
-                    fontSize: '0.8rem',
-                    textShadow: '0 0 10px rgba(212,175,55,0.5)'
+                    top: 0,
+                    left: 0,
+                    x,
+                    y,
+                    width: '300px',
+                    height: '300px',
+                    borderRadius: '50%',
+                    pointerEvents: 'none',
+                    transform: 'translate(-50%, -50%)',
+                    zIndex: 5,
+                    overflow: 'hidden',
+                    display: activeImg ? 'block' : 'none',
+                    boxShadow: '0 0 0 2px rgba(212, 175, 55, 0.5), 0 0 50px rgba(212, 175, 55, 0.2)', // Gold Rim
+                    backgroundColor: '#000'
                 }}
             >
-                <div>ID: {member.name}</div>
-                <div style={{ fontSize: '0.7rem', opacity: 0.8 }}>ROLE: {member.role}</div>
+                {/* Image Inside Lens - Counter-translated to simulate "Revealing" the background */}
+                <motion.img
+                    src={activeImg}
+                    style={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        width: '120%', // Zoomed slightly
+                        height: '120%',
+                        objectFit: 'cover',
+                        transform: 'translate(-50%, -50%)',
+                    }}
+                />
+
+                {/* HUD Elements inside Lens */}
+                <div style={{ position: 'absolute', inset: 0, border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%' }} />
+                <div style={{ position: 'absolute', top: '50%', left: '50%', width: '10px', height: '10px', backgroundColor: 'red', transform: 'translate(-50%, -50%)', borderRadius: '50%' }} />
             </motion.div>
 
-        </motion.div>
+        </section>
     );
 };
 

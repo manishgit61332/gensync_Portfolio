@@ -68,6 +68,21 @@ const Distribution = () => {
                             <ArrowRight color="var(--color-orange)" size={48} strokeWidth={1.5} />
                         </div>
 
+                        {/* New stats text */}
+                        <div style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            padding: '0.5rem 1rem',
+                            borderRadius: '50px',
+                            border: '1px solid var(--color-orange)',
+                            color: 'var(--color-orange)',
+                            marginBottom: '2rem',
+                            fontSize: '0.9rem'
+                        }}>
+                            <Eye size={16} /> 23M+ Organic Views Delivered
+                        </div>
+
                         {/* 3. Distribution Grid */}
                         <div style={{
                             display: 'grid',

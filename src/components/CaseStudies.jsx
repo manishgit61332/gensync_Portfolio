@@ -56,7 +56,9 @@ const CaseStudies = () => {
     // Map scroll (0 to 1) to Service Index (-1 to 4)
     // Starts negative so the "wave" enters from the right
     const scrollIndex = useTransform(scrollYProgress, [0, 1], [-1, SERVICES.length - 1]);
-    const smoothIndex = useSpring(scrollIndex, { stiffness: 150, damping: 20 });
+
+    // SMOOTHER PHYSICS: Lower stiffness, higher damping for "Ease-in/out" feel
+    const smoothIndex = useSpring(scrollIndex, { stiffness: 80, damping: 25, mass: 1.2 });
 
     return (
         <section ref={containerRef} style={{ height: '400vh', position: 'relative', backgroundColor: '#050505' }}>
@@ -74,7 +76,15 @@ const CaseStudies = () => {
                 </div>
 
                 {/* THE ROPE WAVE (Desktop) */}
-                <div className="rope-container" style={{ flex: 1, display: 'flex', alignItems: 'center', width: '100%', paddingLeft: '5vw' }}>
+                <div className="rope-container" style={{
+                    flex: 1,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center', /* Center the cards */
+                    width: '100%',
+                    padding: '0 5vw', /* Balanced padding */
+                    overflowX: 'visible' /* Prevent clipping */
+                }}>
                     {SERVICES.map((service) => (
                         <ServiceCard
                             key={service.id}
