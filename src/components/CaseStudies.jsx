@@ -1,20 +1,55 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import React, { useRef, useState, useEffect } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { ArrowUpRight, ArrowRight } from 'lucide-react';
 
 const projects = [
-    { id: 0, title: 'Project Alpha', category: 'SaaS', color: '#C27B7F', img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop', link: '#' },
-    { id: 1, title: 'Studio Beta', category: 'Agency', color: '#6E8B3D', img: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2564&auto=format&fit=crop', link: '#' },
-    { id: 2, title: 'Gamma Ventures', category: 'VC', color: '#2B4C59', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2564&auto=format&fit=crop', link: '#' },
-    { id: 3, title: 'Delta Health', category: 'Wellness', color: '#D9CBAE', img: 'https://images.unsplash.com/photo-1544367563-12123d8965cd?q=80&w=2564&auto=format&fit=crop', link: '#' },
-    { id: 4, title: 'Epsilon Auto', category: 'Tech', color: '#D9A55B', img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2564&auto=format&fit=crop', link: '#' },
-    { id: 5, title: 'Zeta Foods', category: 'DTC', color: '#3D3D3D', img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2564&auto=format&fit=crop', link: '#' },
-    { id: 6, title: 'Omega Systems', category: 'DevOps', color: '#4A5D6A', img: 'https://images.unsplash.com/photo-1558494949-efc02570fbc9?q=80&w=2564&auto=format&fit=crop', link: '#' },
-    { id: 7, title: 'Theta Labs', category: 'Web3', color: '#8C4B3C', img: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2564&auto=format&fit=crop', link: '#' },
+    {
+        id: 0,
+        title: 'Project Alpha',
+        category: 'Fintech',
+        color: '#C27B7F',
+        img: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop',
+        link: '#',
+        problem: 'A Series-A fintech struggled to communicate its mission to investors.',
+        move: 'Complete narrative workshop & rebranding.',
+        shift: 'Raised $4M, reached 20k waitlist users.'
+    },
+    {
+        id: 1,
+        title: 'Nebula AI',
+        category: 'SaaS',
+        color: '#7B8FC2',
+        img: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop',
+        link: '#',
+        problem: 'Powerful AI tool looked like another generic wrapper.',
+        move: 'High-contrast "Dark Mode" identity & viral launch video.',
+        shift: '1.2M views on X, 500+ paying users in month 1.'
+    },
+    {
+        id: 2,
+        title: 'Velvet',
+        category: 'Consumer',
+        color: '#C2A87B',
+        img: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
+        link: '#',
+        problem: 'Luxury brand felt inaccessible to Gen Z.',
+        move: 'TikTok-first content strategy & "Drop" mechanic.',
+        shift: 'Sold out 3 consecutive drops in <10 mins.'
+    },
+    {
+        id: 3,
+        title: 'Nexus',
+        category: 'Infrastructure',
+        color: '#7BC29D',
+        img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop',
+        link: '#',
+        problem: 'Complex dev-tooling was confusing non-technical stakeholders.',
+        move: 'Simplified 3D interactive visualizations.',
+        shift: 'Sales cycle reduced by 40%.'
+    }
 ];
 
 const CaseStudies = () => {
-    const containerRef = useRef(null);
 
     // 1. TALLER SECTION = CONTROLLED SCROLL (400vh)
     const { scrollYProgress } = useScroll({

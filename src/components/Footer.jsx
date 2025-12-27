@@ -16,13 +16,15 @@ const Footer = () => {
                         style={{
                             padding: '1rem 2rem',
                             fontSize: '1.1rem',
-                            backgroundColor: 'var(--color-black)',
-                            color: '#fff',
+                            backgroundColor: '#fff',
+                            color: '#000',
+                            border: 'none',
                             borderRadius: '50px',
+                            fontWeight: 'bold',
                             cursor: 'pointer'
                         }}
                     >
-                        Build Your Thali
+                        Start Your Story
                     </button>
                     <button
                         onClick={() => window.open('https://calendly.com/manish-gensync/30min', '_blank')}

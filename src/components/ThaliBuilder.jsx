@@ -54,14 +54,15 @@ const ThaliBuilder = () => {
                 {/* Brass/Gold Accent for Title */}
                 <h2 className="text-center" style={{ marginBottom: 'var(--spacing-sm)', color: '#D4AF37', fontFamily: 'var(--font-heading)' }}>Build Your Thali.</h2>
 
-                {/* Thali Hint */}
                 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 'var(--spacing-lg)' }}>
-                    <button
-                        onClick={() => setShowHint(!showHint)}
-                        style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#D4AF37', fontSize: '0.9rem', opacity: 0.8 }}
-                    >
-                        <Info size={16} /> What is a Thali?
-                    </button>
+                    <div style={{
+                        display: 'flex', alignItems: 'center', gap: '0.5rem',
+                        color: '#D4AF37', fontSize: '0.9rem', opacity: 0.9,
+                        backgroundColor: 'rgba(212, 175, 55, 0.1)', padding: '0.5rem 1rem', borderRadius: '50px'
+                    }}>
+                        <Info size={16} />
+                        <span>A <strong>Thali</strong> is a custom platter of services. Pick exactly what you need.</span>
+                    </div>
                 </div>
 
                 <AnimatePresence>

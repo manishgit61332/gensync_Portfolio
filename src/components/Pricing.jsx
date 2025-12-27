@@ -11,7 +11,9 @@ const Pricing = () => {
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: 'var(--spacing-lg)' }}>
                     <h2 style={{ color: '#fff', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Simple Models. <span style={{ color: 'var(--color-orange)' }}>Complex Output.</span></h2>
-                    <p style={{ opacity: 0.9 }}>Stop paying for headcount. Start paying for velocity.</p>
+                    <p style={{ opacity: 0.9, marginTop: '1rem', fontSize: '1.2rem', maxWidth: '700px', marginInline: 'auto' }}>
+                        Get senior design & narrative expertise at a fraction of the cost of a full-time hire.
+                    </p>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
@@ -40,7 +42,7 @@ const Pricing = () => {
                             })}
                             style={{ width: '100%', padding: '1rem', backgroundColor: 'var(--color-orange)', color: '#000', fontWeight: 'bold', borderRadius: '8px', marginTop: '2rem', cursor: 'pointer' }}
                         >
-                            Start Trial
+                            Start Your Story
                         </button>
                     </motion.div>
 

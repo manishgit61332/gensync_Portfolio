@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 import Belief from '../components/Belief';
 import Philosophy from '../components/Philosophy';
 import Pricing from '../components/Pricing';
-import Team from '../components/Team';
+import TeamKitchen from '../components/TeamKitchen';
 import Distribution from '../components/Distribution';
 import ThaliBuilder from '../components/ThaliBuilder';
 import CaseStudies from '../components/CaseStudies';
@@ -30,7 +30,7 @@ const Home = () => {
             <Philosophy />
             {/* Narrative Flow: Ethos -> Methodology -> Credibility (Team/Social) -> Proof (Cases) -> Action (Thali) -> Pricing */}
             <Distribution />
-            <Team />
+            <TeamKitchen />
             <HallOfFame />
 
             <ThaliBuilder /> {/* ID 'thali' is inside ThaliBuilder */}
