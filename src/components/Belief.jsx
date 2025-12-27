@@ -25,7 +25,7 @@ const Belief = () => {
                     {/* PROOF POINTS */}
                     <div style={{ display: 'flex', gap: '3rem', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem' }}>
                         <div>
-                            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', lineHeight: 1 }}>17M+</div>
+                            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', lineHeight: 1 }}>23M+</div>
                             <div style={{ fontSize: '0.9rem', opacity: 0.6, marginTop: '0.5rem' }}>Organic Views Delivered</div>
                         </div>
                         <div>
