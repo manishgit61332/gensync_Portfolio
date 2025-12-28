@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import logo from '../assets/logo-transparent.png';
-import Particles from './Particles';
+
 
 const GlitchWord = () => {
     const [text, setText] = React.useState("Cults");

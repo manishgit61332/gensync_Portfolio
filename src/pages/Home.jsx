@@ -11,7 +11,7 @@ import CaseStudies from '../components/CaseStudies';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import HallOfFame from '../components/HallOfFame';
-import Particles from '../components/Particles';
+
 import Preloader from '../components/Preloader';
 
 const Home = () => {
@@ -22,7 +22,7 @@ const Home = () => {
             <AnimatePresence>
                 {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
             </AnimatePresence>
-            <Particles color="rgba(255, 255, 255, 0.15)" count={40} />
+
             <Navbar />
             <Hero />
             <CaseStudies /> {/* ID 'work' is inside CaseStudies */}

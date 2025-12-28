@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Check } from 'lucide-react';
-import Particles from '../components/Particles';
+
 
 const Checkout = () => {
     const location = useLocation();
@@ -58,7 +58,7 @@ Phone: ${phone}
 
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#050505', color: '#fff', fontFamily: 'var(--font-body)', position: 'relative' }}>
-            <Particles color="rgba(212, 175, 55, 0.2)" count={20} />
+
 
             <div className="container" style={{ paddingTop: '4rem', maxWidth: '800px' }}>
                 <button
