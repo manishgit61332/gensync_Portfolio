@@ -81,10 +81,10 @@ const Navbar = () => {
                                     setIsMobileMenuOpen(false);
                                     window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }}
-                                style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem', position: 'relative', zIndex: 1002 }}
+                                style={{ cursor: 'pointer', display: 'flex', alignItems: 'baseline', gap: '1px', position: 'relative', zIndex: 1002 }}
                             >
-                                <img src={logo} alt="Gensync Logo" style={{ height: '30px' }} />
-                                <span style={{ fontWeight: 700, letterSpacing: '-0.5px' }}>Gensync</span>
+                                <span className="font-sans" style={{ fontWeight: 700, fontSize: '1.5rem', letterSpacing: '-0.02em', color: '#fff' }}>Gen</span>
+                                <span className="font-serif" style={{ color: 'var(--color-orange)', fontSize: '1.7rem', fontStyle: 'italic', letterSpacing: '0.02em' }}>Sync</span>
                             </div>
 
                             {/* Desktop Menu */}

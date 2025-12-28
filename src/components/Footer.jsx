@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="container text-center">
                 <h2 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', marginBottom: 'var(--spacing-lg)', lineHeight: 1.1 }}>
                     To seek attention is easy.<br />
-                    To earn respect takes time.
+                    <span style={{ color: 'var(--color-white)' }}>To earn respect takes time.</span>
                 </h2>
 
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: 'var(--spacing-xl)' }}>

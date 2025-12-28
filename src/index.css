@@ -3,30 +3,39 @@
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap');
 
 :root {
+  /* Core Colors */
   --color-black: #000000;
+  --color-white: #FFFFFF;
   --color-mint: #E3FFEB;
   --color-orange: #FF7701;
   --color-maroon: #580C11;
   --color-pink: #FF9F9F;
-  --color-white: #FFFFFF;
 
+  /* Typography */
   --font-heading: 'Instrument Serif', serif;
   --font-body: 'Satoshi', sans-serif;
-  --font-accent: 'Satoshi', sans-serif;
-  /* Fallback for Gensync decorative text if needed */
 
-  --spacing-sm: 1.5rem;
-  --spacing-md: 3rem;
-  --spacing-lg: 6rem;
-  --spacing-xl: 12rem;
+  /* Font Scale */
+  --text-xl: clamp(3rem, 6vw, 6rem);
+  --text-lg: clamp(2rem, 4vw, 3.5rem);
+  --text-md: clamp(1.25rem, 2vw, 1.75rem);
+  --text-reg: 1.1rem;
+  --text-sm: 0.9rem;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 2rem;
+  --spacing-md: 4rem;
+  --spacing-lg: 8rem;
+  --spacing-xl: 16rem;
 }
 
 @media (max-width: 768px) {
   :root {
-    --spacing-sm: 1rem;
-    --spacing-md: 2rem;
-    --spacing-lg: 4rem;
-    --spacing-xl: 8rem;
+    --spacing-sm: 1.5rem;
+    --spacing-md: 3rem;
+    --spacing-lg: 6rem;
+    --spacing-xl: 10rem;
   }
 }
 
@@ -44,18 +53,16 @@ body {
   position: relative;
 }
 
-/* CINEMATIC FILM GRAIN OVERLAY */
+/* Film Grain */
 body::before {
   content: "";
   position: fixed;
   inset: -50%;
-  /* Extend far beyond viewport to handle movement */
   width: 200%;
   height: 200%;
   pointer-events: none;
   z-index: 9999;
   opacity: 0.04;
-  /* Very subtle */
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opactiy='0.5'/%3E%3C/svg%3E");
   background-repeat: repeat;
   animation: grain 0.5s steps(1) infinite;
@@ -84,24 +91,26 @@ body::before {
   }
 }
 
-/* Revert to standard cursor as requested */
 html,
 body {
   cursor: auto;
 }
 
-
-/* Hide scrollbar for Chrome/Safari/Opera */
 ::-webkit-scrollbar {
-  display: none;
+  width: 8px;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-html {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+::-webkit-scrollbar-track {
+  background: var(--color-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-orange);
 }
 
 h1,
@@ -127,6 +136,51 @@ a {
   color: inherit;
 }
 
+/* Typography System - PROPER WEIGHTS FOR READABILITY */
+.font-heading,
+.font-serif {
+  font-family: var(--font-heading);
+}
+
+.font-body,
+.font-sans {
+  font-family: var(--font-body);
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.text-xl {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.text-lg {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.text-md {
+  font-size: var(--text-md);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.text-reg {
+  font-size: var(--text-reg);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.text-sm {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
 /* Utilities */
 .container {
   max-width: 1400px;
@@ -146,20 +200,24 @@ a {
   padding: var(--spacing-xl) 0;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+/* Premium Highlighter Effects - Subtle Contrast */
+.highlight-orange {
+  background: linear-gradient(180deg, transparent 65%, rgba(255, 119, 1, 0.2) 65%);
+  padding: 0 0.15em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--color-black);
+.highlight-mint {
+  background: linear-gradient(180deg, transparent 65%, rgba(227, 255, 235, 0.25) 65%);
+  padding: 0 0.15em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-orange);
+.highlight-gold {
+  background: linear-gradient(180deg, transparent 65%, rgba(212, 175, 55, 0.2) 65%);
+  padding: 0 0.15em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }

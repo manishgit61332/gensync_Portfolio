@@ -52,7 +52,7 @@ const ThaliBuilder = () => {
             {/* ... container/title/hint code ... */}
             <div className="container">
                 {/* Brass/Gold Accent for Title */}
-                <h2 className="text-center" style={{ marginBottom: 'var(--spacing-sm)', color: '#D4AF37', fontFamily: 'var(--font-heading)' }}>Build Your Thali.</h2>
+                <h2 className="text-center text-lg" style={{ marginBottom: 'var(--spacing-sm)', color: '#D4AF37', fontFamily: 'var(--font-heading)', fontWeight: 500 }}>Build Your Thali.</h2>
 
                 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 'var(--spacing-lg)' }}>
                     <div style={{

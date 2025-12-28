@@ -3,13 +3,14 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Checkout from './pages/Checkout';
 import ServiceDetail from './pages/ServiceDetail';
-import TeamKitchen from './components/TeamKitchen'; // Ensure this is available if used directly
-
 import SmoothScroll from './components/SmoothScroll';
+import CursorTrail from './components/CursorTrail';
+import './index.css';
 
 const App = () => {
   return (
     <SmoothScroll>
+      <CursorTrail />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/checkout" element={<Checkout />} />

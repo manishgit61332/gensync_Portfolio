@@ -20,7 +20,7 @@ const Distribution = () => {
         // SOLID COLOUR: Black. No Gradient. No Borders.
         <section className="section-padding" style={{ background: 'var(--color-black)', color: 'var(--color-white)' }}>
             <div className="container">
-                <div style={{ textAlign: 'center', marginBottom: 'var(--spacing-lg)' }}>
+                <div style={{ textAlign: 'center', marginBottom: 'var(--spacing-md)' }}>
                     <h2 style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)' }}>We Don't Just Post.<br /><span style={{ color: 'var(--color-orange)' }}>We Dominate.</span></h2>
                     {/* STAT INJECTION: Reach Metric */}
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginTop: '1rem', padding: '0.5rem 1.5rem', border: '1px solid var(--color-orange)', borderRadius: '50px', color: 'var(--color-orange)' }}>

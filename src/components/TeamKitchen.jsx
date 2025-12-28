@@ -31,16 +31,17 @@ const TeamKitchen = () => {
             }}
         >
             {/* Section Header */}
-            <div style={{ marginBottom: '4rem', maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
+            <div style={{ maxWidth: '1400px', margin: '0 auto 6rem auto', width: '100%' }}>
                 <motion.h2
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     style={{
-                        fontSize: 'clamp(3rem, 8vw, 8rem)',
+                        fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                         fontFamily: 'var(--font-heading)',
-                        lineHeight: 0.9,
+                        fontWeight: 500,
+                        lineHeight: 1.2,
                         margin: 0,
                         marginBottom: '1rem'
                     }}

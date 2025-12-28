@@ -166,9 +166,15 @@ const Hero = () => {
                     <LiquidText text="Serving 15+ founders across SaaS, tech, and venture" config={{ y: -5, scaleY: 1.2, scaleX: 0.9, color: 'var(--color-mint)' }} />
                 </motion.div>
 
-                <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)', marginBottom: '2rem', lineHeight: 1.1 }}>
+                <h1 style={{ marginBottom: '2rem', lineHeight: 1.1 }}>
                     <span style={{ color: '#fff' }}>
-                        <LiquidText text="We Engineer" /> <GlitchWord />
+                        <span className="font-sans text-xl" style={{ fontWeight: 700, letterSpacing: '-0.03em', display: 'inline-block' }}>
+                            <LiquidText text="We Engineer" />
+                        </span>
+                        {" "}
+                        <span className="font-serif" style={{ fontSize: 'clamp(3rem, 6vw, 6rem)', fontWeight: 400, lineHeight: 1.1, display: 'inline-block' }}>
+                            <GlitchWord />
+                        </span>
                     </span>
                 </h1>
 
@@ -214,3 +220,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

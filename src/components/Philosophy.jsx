@@ -22,7 +22,7 @@ const Philosophy = () => {
     return (
         <section className="section-padding" style={{ backgroundColor: 'var(--color-black)', overflow: 'hidden' }}>
             <div className="container">
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--spacing-lg)', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--spacing-md)', justifyContent: 'space-between' }}>
                     <QuoteBlock
                         quote="If I was down to my last dollar, I would spend it on public relations."
                         author="Bill Gates"
