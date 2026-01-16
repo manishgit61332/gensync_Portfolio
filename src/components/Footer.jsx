@@ -46,7 +46,7 @@ const Footer = () => {
                 >
                     <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Ready to start?</p>
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem' }}>
-                        <a href="mailto:contact@gensync.in">contact@gensync.in</a>
+                        <a href="mailto:manish@gensync.in">manish@gensync.in</a>
                         <a href="#">LinkedIn</a>
                         <a href="#">X / Twitter</a>
                     </div>
