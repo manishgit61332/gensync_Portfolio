@@ -9,7 +9,7 @@ const SmoothScroll = ({ children }) => {
             direction: 'vertical',
             gestureDirection: 'vertical',
             smooth: true,
-            smoothTouch: true,
+            smoothTouch: false,
             touchMultiplier: 2,
         });
 
