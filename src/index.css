@@ -97,11 +97,16 @@ body::before {
 }
 
 html,
-body {
+body,
+#root,
+.smooth-scroll-wrapper {
   cursor: auto;
   background-color: transparent;
   overflow-x: hidden;
   width: 100%;
+  max-width: 100vw;
+  position: relative;
+  /* Helper for absolute children */
 }
 
 ::-webkit-scrollbar {
