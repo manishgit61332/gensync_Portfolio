@@ -95,9 +95,24 @@ const CaseStudies = () => {
                     setScrollRange(0);
                     return;
                 }
-                const scrollWidth = scrollRef.current.scrollWidth;
-                const viewportWidth = window.innerWidth;
-                setScrollRange(-(scrollWidth - viewportWidth));
+
+                // Wait for layout to complete
+                requestAnimationFrame(() => {
+                    if (!scrollRef.current) return;
+
+                    const scrollWidth = scrollRef.current.scrollWidth;
+                    const viewportWidth = window.innerWidth;
+
+                    // Calculate scroll distance accounting for left padding (5vw)
+                    // We want to scroll until the content's right edge minus some padding aligns with viewport
+                    const leftPaddingPx = viewportWidth * 0.05; // 5vw in pixels
+
+                    // The distance we need to scroll is: total content width - (viewport - left padding)
+                    // This ensures when we finish scrolling, the last card + right padding fits in view
+                    const scrollDistance = -(scrollWidth - viewportWidth + leftPaddingPx);
+
+                    setScrollRange(scrollDistance);
+                });
             };
 
             updateScrollRange();
@@ -187,7 +202,7 @@ const CaseStudies = () => {
                         flexDirection: isMobile ? 'column' : 'row',
                         gap: isMobile ? '2rem' : '4vw',
                         paddingLeft: '5vw',
-                        paddingRight: '5vw',
+                        paddingRight: isMobile ? '5vw' : '20vw',
                         alignItems: isMobile ? 'stretch' : 'center',
                         // Mobile: Auto height, Desktop: 100% to fill updated viewport
                         height: isMobile ? 'auto' : '100%',
