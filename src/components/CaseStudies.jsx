@@ -200,7 +200,7 @@ const CaseStudies = () => {
                         display: 'flex',
                         // Mobile: Vertical Column, Desktop: Horizontal Row
                         flexDirection: isMobile ? 'column' : 'row',
-                        gap: isMobile ? '2rem' : '4vw',
+                        gap: isMobile ? '2rem' : '5vw',
                         paddingLeft: '5vw',
                         paddingRight: isMobile ? '5vw' : '20vw',
                         alignItems: isMobile ? 'stretch' : 'center',
@@ -253,7 +253,7 @@ const ServiceCard = ({ service, navigate, globalProgress, isMobile }) => {
             whileHover="hover"
             whileTap={{ scale: 0.98 }}
             style={{
-                width: isMobile ? '100%' : '80vw',
+                width: isMobile ? '100%' : '70vw',
                 maxWidth: '600px',
                 height: isMobile ? '50vh' : '70vh',
                 maxHeight: '600px',
