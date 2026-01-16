@@ -73,6 +73,8 @@ const useMediaQuery = (query) => {
 
 const CaseStudies = () => {
     const containerRef = useRef(null);
+    const scrollRef = useRef(null);
+    const [scrollRange, setScrollRange] = useState(0);
     const navigate = useNavigate();
     const setGlobalTheme = useSectionColor();
     const isVisible = useRef(false);
@@ -85,8 +87,28 @@ const CaseStudies = () => {
 
     const springScroll = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
+    // Measure scroll width for accurate horizontal scrolling
+    useEffect(() => {
+        if (scrollRef.current) {
+            const updateScrollRange = () => {
+                if (isMobile) {
+                    setScrollRange(0);
+                    return;
+                }
+                const scrollWidth = scrollRef.current.scrollWidth;
+                const viewportWidth = window.innerWidth;
+                setScrollRange(-(scrollWidth - viewportWidth));
+            };
+
+            updateScrollRange();
+            window.addEventListener('resize', updateScrollRange);
+            return () => window.removeEventListener('resize', updateScrollRange);
+        }
+    }, [isMobile]);
+
     // Horizontal Scroll Transformation (Only valid on Desktop)
-    const x = useTransform(springScroll, [0, 1], ["0%", "-85%"]);
+    // Uses the calculated pixel value instead of percentage for precision
+    const x = useTransform(springScroll, [0, 1], ["0px", `${scrollRange}px`]);
 
     // BACKGROUND COLOR LOGIC
     useMotionValueEvent(springScroll, "change", (latest) => {
@@ -155,20 +177,22 @@ const CaseStudies = () => {
                     Selected Work.
                 </h2>
 
-                <motion.div style={{
-                    // Mobile: No transformation, Desktop: Horizontal scroll
-                    x: isMobile ? 0 : x,
-                    display: 'flex',
-                    // Mobile: Vertical Column, Desktop: Horizontal Row
-                    flexDirection: isMobile ? 'column' : 'row',
-                    gap: isMobile ? '2rem' : '4vw',
-                    paddingLeft: '5vw',
-                    paddingRight: isMobile ? '5vw' : '60vw',
-                    alignItems: isMobile ? 'stretch' : 'center',
-                    // Mobile: Auto height, Desktop: 100% to fill updated viewport
-                    height: isMobile ? 'auto' : '100%',
-                    willChange: isMobile ? 'auto' : 'transform'
-                }}>
+                <motion.div
+                    ref={scrollRef}
+                    style={{
+                        // Mobile: No transformation, Desktop: Horizontal scroll
+                        x: isMobile ? 0 : x,
+                        display: 'flex',
+                        // Mobile: Vertical Column, Desktop: Horizontal Row
+                        flexDirection: isMobile ? 'column' : 'row',
+                        gap: isMobile ? '2rem' : '4vw',
+                        paddingLeft: '5vw',
+                        paddingRight: '5vw',
+                        alignItems: isMobile ? 'stretch' : 'center',
+                        // Mobile: Auto height, Desktop: 100% to fill updated viewport
+                        height: isMobile ? 'auto' : '100%',
+                        willChange: isMobile ? 'auto' : 'transform'
+                    }}>
                     {SERVICES.map((service, index) => (
                         <ServiceCard
                             key={service.id}
