@@ -100,16 +100,6 @@ html,
 body {
   cursor: auto;
   background-color: transparent;
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100vw;
-  position: relative;
-}
-
-#root,
-.smooth-scroll-wrapper {
-  position: relative;
-  width: 100%;
 }
 
 ::-webkit-scrollbar {

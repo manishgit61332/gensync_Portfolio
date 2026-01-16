@@ -46,7 +46,7 @@ Phone: ${phone}
         `;
 
         // Mailto Link
-        const mailtoLink = `mailto:manish@gensync.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const mailtoLink = `mailto:contact@gensync.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
         // Simulate "Sending" then open mailto
         setTimeout(() => {

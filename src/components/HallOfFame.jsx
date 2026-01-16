@@ -52,7 +52,7 @@ const HallOfFame = () => {
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        onClick={() => window.location.href = 'mailto:manish@gensync.in'}
+                        onClick={() => window.location.href = 'mailto:contact@gensync.in'}
                         style={{
                             padding: '1rem 2rem',
                             fontSize: '1.2rem',
