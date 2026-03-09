@@ -1,0 +1,12 @@
+# GenSync — gensync.in
+# Allow all search engines and AI crawlers
+
+User-agent: *
+Allow: /
+Disallow: /checkout
+
+# Sitemap
+Sitemap: https://gensync.in/sitemap.xml
+
+# Crawl-delay (optional, be polite)
+Crawl-delay: 1

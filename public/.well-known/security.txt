@@ -1,0 +1,4 @@
+Contact: mailto:contact@gensync.in
+Expires: 2027-02-19T00:00:00.000Z
+Canonical: https://gensync.in/.well-known/security.txt
+Preferred-Languages: en
