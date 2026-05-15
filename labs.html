@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QK83RRHWED"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QK83RRHWED');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- SEO Metadata -->
+  <title>GenSync Labs | AI Operations & Cloud Infrastructure</title>
+  <meta name="description" content="The R&D division of GenSync. We engineer autonomous AI agents, multi-platform internal systems, and active monitoring dashboards for the next generation of startups." />
+  <meta name="keywords" content="GenSync Labs, AI agents, API monitoring, cloud infrastructure, AI automation, CREA, API Key Health" />
+  <meta name="author" content="GenSync" />
+  <meta name="theme-color" content="#06060A" />
+  <script>
+    (() => {
+      try {
+        const theme = localStorage.getItem('gensync-theme') || 'dark';
+        document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+        document.documentElement.style.colorScheme = document.documentElement.dataset.theme;
+      } catch {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    })();
+  </script>
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://www.gensync.in/labs.html" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gensync.in/labs.html" />
+  <meta property="og:title" content="GenSync Labs | AI Operations & Cloud Infrastructure" />
+  <meta property="og:description" content="Where systems are born. Autonomous AI agents and active infrastructure for post-Series A startups." />
+  <meta property="og:image" content="https://www.gensync.in/assets/og-image.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="GenSync" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.gensync.in/labs.html" />
+  <meta name="twitter:title" content="GenSync Labs | AI Operations & Tech Infrastructure" />
+  <meta name="twitter:description" content="We engineer fully autonomous AI agents and web systems." />
+  <meta name="twitter:image" content="https://www.gensync.in/assets/og-image.webp" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.gensync.in/labs.html",
+        "url": "https://www.gensync.in/labs.html",
+        "name": "GenSync Labs",
+        "description": "R&D division of GenSync engineering advanced AI operations.",
+        "isPartOf": { "@id": "https://www.gensync.in/#website" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "CREA",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Cloud",
+        "description": "Autonomous AI operations engine integrated thoroughly into enterprise systems."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "API Key Health",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Cloud",
+        "description": "Real-time monitoring network tracking quota, degradation, and pricing for provider APIs."
+      }
+    ]
+  }
+  </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/styles/design-system.css" />
+  <link rel="stylesheet" href="/src/styles/animations.css" />
+  <link rel="stylesheet" href="/src/styles/sections.css" />
+  <link rel="stylesheet" href="/src/styles/labs.css" />
+  <link rel="stylesheet" href="/node_modules/lenis/dist/lenis.css" />
+</head>
+<body class="labs-body">
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar navbar-labs" id="navbar">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <span class="logo-gen">Gen</span><span class="logo-sync">Sync</span>
+        <span class="labs-marker">Labs</span>
+      </a>
+      <div class="nav-links">
+        <a href="/">Main Site</a>
+        <a href="#crea">CREA</a>
+        <a href="#api-health">API Key Health</a>
+        <a href="#cloud-wrapper">Cloud Wrapper</a>
+      </div>
+      <div class="nav-cta">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme" aria-pressed="false">
+          <span class="theme-toggle__track" aria-hidden="true">
+            <span class="theme-toggle__icon theme-toggle__icon--sun">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3.5"></circle>
+                <path d="M12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"></path>
+              </svg>
+            </span>
+            <span class="theme-toggle__icon theme-toggle__icon--moon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.4 14.2A7.7 7.7 0 0 1 9.8 3.6a8.7 8.7 0 1 0 10.6 10.6Z"></path>
+              </svg>
+            </span>
+            <span class="theme-toggle__thumb"></span>
+          </span>
+        </button>
+        <a href="https://calendly.com/manish-gensync/30min" target="_blank" rel="noopener" class="btn btn-primary">Let's Talk!</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="theme-toggle theme-toggle--mobile" type="button" data-theme-toggle aria-label="Switch to light theme" aria-pressed="false">
+      <span class="theme-toggle__track" aria-hidden="true">
+        <span class="theme-toggle__icon theme-toggle__icon--sun">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3.5"></circle>
+            <path d="M12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"></path>
+          </svg>
+        </span>
+        <span class="theme-toggle__icon theme-toggle__icon--moon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.4 14.2A7.7 7.7 0 0 1 9.8 3.6a8.7 8.7 0 1 0 10.6 10.6Z"></path>
+          </svg>
+        </span>
+        <span class="theme-toggle__thumb"></span>
+      </span>
+    </button>
+    <a href="/">Main Site</a>
+    <a href="#crea">CREA</a>
+    <a href="#api-health">API Key Health</a>
+    <a href="https://calendly.com/manish-gensync/30min" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1rem;">Let's Talk!</a>
+  </div>
+
+  <!-- ==================== LABS HERO ==================== -->
+  <section class="labs-hero" id="labs-hero">
+    <div class="labs-hero-mesh">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+    </div>
+
+    <div class="container">
+      <div class="labs-hero-content">
+        <div class="labs-hero-text">
+          <div class="labs-badge">
+            <span class="badge">GenSync Labs · R&D Division</span>
+          </div>
+
+          <h1>Where<br/>systems are<br/><span class="accent">born.</span></h1>
+
+          <p class="labs-sub">
+            We don't just use tools — we build them. Labs is where we engineer the AI agents, monitoring platforms, and digital infrastructure that runs GenSync and our clients' operations.
+          </p>
+
+          <div class="labs-actions">
+            <a href="#crea" class="btn btn-labs">Explore Products ↓</a>
+            <a href="https://calendly.com/manish-gensync/30min" target="_blank" rel="noopener" class="btn btn-secondary">Book a Demo</a>
+          </div>
+        </div>
+
+        <div class="labs-hero-visual">
+          <div class="terminal-card" role="img" aria-label="Terminal showing system status: CREA online, API keys healthy, Cloud Wrapper responding.">
+            <div class="terminal-header" aria-hidden="true">
+              <div class="terminal-dot red"></div>
+              <div class="terminal-dot yellow"></div>
+              <div class="terminal-dot green"></div>
+              <span class="terminal-title">gensync-labs ~ /systems</span>
+            </div>
+            <div class="terminal-body" aria-hidden="true">
+              <span class="line"><span class="prompt">λ</span> <span class="cmd" data-text="crea status --all"></span></span>
+              <span class="line output success">✓ CREA v3.2 — Online</span>
+              <span class="line output dim">  Active threads: 14</span>
+              <span class="line output dim">  Mails sent today: 47</span>
+              <span class="line output dim">  WhatsApp synced: true</span>
+              <span class="line output dim">  Google Workspace: connected</span>
+              <span class="line">&nbsp;</span>
+              <span class="line"><span class="prompt">λ</span> <span class="cmd" data-text="api-health scan"></span></span>
+              <span class="line output success">✓ 23/24 keys healthy</span>
+              <span class="line output warning">⚠ 1 key degraded (Stripe)</span>
+              <span class="line output dim">  Quota usage: 67%</span>
+              <span class="line output dim">  Leaked keys: 0</span>
+              <span class="line">&nbsp;</span>
+              <span class="line"><span class="prompt">λ</span> <span class="cmd" data-text="cloud-wrapper ping"></span></span>
+              <span class="line output success">✓ Cloud OS responding — 12ms</span>
+              <span class="line"><span class="prompt">λ</span> <span class="cursor"></span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CREA PRODUCT ==================== -->
+  <section class="labs-product" id="crea">
+    <div class="container">
+      <div class="labs-product-grid">
+        <div class="labs-product-info reveal">
+          <span class="section-label">Product 01</span>
+          <h2>Meet <span class="accent">CREA.</span><br/>Your Operations Robot.</h2>
+          <p class="product-desc">
+            CREA is an AI-native operations engine that acts as an extension of your founding team. It doesn't just respond — it thinks, coordinates, and executes across every platform your business runs on.
+          </p>
+
+          <div class="feature-pills">
+            <span class="feature-pill">Gmail Integration</span>
+            <span class="feature-pill">Google Drive</span>
+            <span class="feature-pill">WhatsApp</span>
+            <span class="feature-pill">Google Sheets</span>
+            <span class="feature-pill">Calendar</span>
+            <span class="feature-pill">Campaign Runner</span>
+            <span class="feature-pill">Meeting Coordinator</span>
+            <span class="feature-pill">Context Engine</span>
+          </div>
+
+          <div class="status-grid">
+            <div class="status-item">
+              <div class="status-dot active" role="img" aria-label="Status: Active"></div>
+              <span>Mail automation: Active</span>
+            </div>
+            <div class="status-item">
+              <div class="status-dot active" role="img" aria-label="Status: Connected"></div>
+              <span>WhatsApp bridge: Connected</span>
+            </div>
+            <div class="status-item">
+              <div class="status-dot info" role="img" aria-label="Status: Info"></div>
+              <span>Context depth: Deep</span>
+            </div>
+            <div class="status-item">
+              <div class="status-dot active" role="img" aria-label="Status: Synced"></div>
+              <span>Multi platform: Synced</span>
+            </div>
+          </div>
+
+          <a href="https://calendly.com/manish-gensync/30min" target="_blank" rel="noopener" class="btn btn-labs">Request Access →</a>
+        </div>
+
+        <div class="labs-product-visual reveal-right browser-window">
+          <div class="browser-header">
+            <span class="dot close"></span>
+            <span class="dot min"></span>
+            <span class="dot max"></span>
+          </div>
+          <div class="browser-content" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+            <iframe 
+              src="https://www.youtube.com/embed/31B70marn0U?autoplay=1&mute=1&loop=1&playlist=31B70marn0U&controls=0&showinfo=0&rel=0" 
+              title="CREA Product Demo" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0 0 var(--radius-lg) var(--radius-lg);">
+            </iframe>
+            <div class="iframe-blocker" style="position: absolute; inset: 0; z-index: 10;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== API KEY HEALTH ==================== -->
+  <section class="labs-product" id="api-health">
+    <div class="container">
+      <div class="labs-product-grid reverse">
+        <div class="labs-product-info reveal">
+          <span class="section-label">Product 02</span>
+          <h2>API Key <span class="accent">Health.</span><br/>Never fly blind again.</h2>
+          <p class="product-desc">
+            A real-time monitoring dashboard that tracks every API key in your infrastructure. Know instantly when a key is degraded, leaked in a public report, running low on quota, or costing you money while sitting unused.
+          </p>
+
+          <div class="feature-pills">
+            <span class="feature-pill">Real Time Monitoring</span>
+            <span class="feature-pill">Leak Detection</span>
+            <span class="feature-pill">Quota Tracking</span>
+            <span class="feature-pill">Cost Analysis</span>
+            <span class="feature-pill">Degradation Alerts</span>
+            <span class="feature-pill">Multi Provider</span>
+          </div>
+
+          <div class="status-grid">
+            <div class="status-item">
+              <div class="status-dot active" role="img" aria-label="Status: Healthy"></div>
+              <span>23 keys monitored</span>
+            </div>
+            <div class="status-item">
+              <div class="status-dot warning" role="img" aria-label="Status: Warning"></div>
+              <span>1 key degraded</span>
+            </div>
+            <div class="status-item">
+              <div class="status-dot active" role="img" aria-label="Status: Healthy"></div>
+              <span>0 leaked keys</span>
+            </div>
+            <div class="status-item">
+              <div class="status-dot info" role="img" aria-label="Status: Info"></div>
+              <span>3 unused keys flagged</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="https://calendly.com/manish-gensync/30min" target="_blank" rel="noopener" class="btn btn-labs">Request a Custom Integration for your Enterprise →</a>
+            <a href="http://apikeyhealth.com/" target="_blank" rel="noopener" class="btn btn-secondary" style="border-color: rgba(0, 240, 255, 0.3); color: var(--labs-accent);">Try out product ↗</a>
+          </div>
+        </div>
+
+        <div class="labs-product-visual reveal-left">
+          <img src="/src/assets/api-key-health.webp" alt="API Key Health Dashboard" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CLOUD WRAPPER (Architecture) ==================== -->
+  <section class="labs-architecture" id="cloud-wrapper">
+    <div class="container">
+      <div class="arch-header reveal">
+        <span class="section-label" style="justify-content:center;color:var(--labs-accent)">Product 03</span>
+        <h2 class="section-title">The Open <span style="color:var(--labs-accent)">Cloud Wrapper.</span></h2>
+        <p class="section-subtitle" style="margin:0 auto;">A complete cloud-based operating system for your work. It connects everything. It remembers everything. It gets things done.</p>
+      </div>
+
+      <div class="arch-diagram reveal">
+        <div class="arch-integrations nodes-left">
+          <div class="arch-node">Gmail</div>
+          <div class="arch-node">Google Drive</div>
+          <div class="arch-node">Google Sheets</div>
+          <div class="arch-node">WhatsApp</div>
+          <div class="arch-node">Calendar</div>
+          <div class="arch-node">Tasks</div>
+        </div>
+
+        <div class="arch-center">
+          Cloud<br/>OS
+        </div>
+
+        <div class="arch-outputs nodes-right">
+          <div class="arch-node">AI Chat</div>
+          <div class="arch-node">Auto Emails</div>
+          <div class="arch-node">Smart Reports</div>
+          <div class="arch-node">Scheduling</div>
+          <div class="arch-node">Campaigns</div>
+          <div class="arch-node">Team Sync</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LABS CTA ==================== -->
+  <section class="labs-cta">
+    <div class="container">
+      <div class="labs-cta-box reveal-scale">
+        <span class="section-label" style="justify-content:center;color:var(--labs-accent)">Interested?</span>
+        <h2 class="section-title">Got systems that<br/>need to be <span class="accent">smarter?</span></h2>
+        <p>We build systems that think. Let's talk about what yours could become.</p>
+        <a href="https://calendly.com/manish-gensync/30min" target="_blank" rel="noopener" class="btn btn-labs">Book a Technical Demo →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="labs-footer">
+    <div class="container">
+      <p>
+        <a href="/" class="nav-logo" style="display:inline-flex; vertical-align:middle; margin-right:8px;">
+          <span class="logo-gen">Gen</span><span class="logo-sync">Sync</span>
+        </a> · Labs Division · © 2025
+        <span style="margin: 0 8px;">·</span>
+        <a href="/">← Back to main site</a>
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/theme.js"></script>
+  <script type="module" src="/src/labs.js"></script>
+</body>
+</html>

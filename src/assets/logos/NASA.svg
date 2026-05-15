@@ -1,0 +1,19 @@
+<svg width="960" height="820" viewBox="0 0 960 820" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="nasaTitle">
+  <title id="nasaTitle">NASA</title>
+  <circle cx="455" cy="410" r="365" fill="#215EAA"/>
+  <path d="M40 566C252 470 505 355 916 74C742 372 444 531 112 675C172 631 102 594 40 566Z" fill="#EF2D3A"/>
+  <ellipse cx="455" cy="410" rx="157" ry="350" transform="rotate(-24 455 410)" stroke="white" stroke-width="10"/>
+  <g fill="white">
+    <circle cx="340" cy="128" r="4"/>
+    <circle cx="386" cy="166" r="5"/>
+    <circle cx="515" cy="147" r="5"/>
+    <circle cx="595" cy="205" r="6"/>
+    <circle cx="663" cy="565" r="5"/>
+    <circle cx="255" cy="578" r="5"/>
+    <circle cx="360" cy="654" r="5"/>
+    <path d="M600 113L612 139L640 148L612 157L600 184L588 157L560 148L588 139L600 113Z"/>
+    <path d="M304 248L315 270L339 278L315 286L304 309L293 286L268 278L293 270L304 248Z"/>
+    <path d="M616 603L627 626L653 634L627 642L616 667L605 642L579 634L605 626L616 603Z"/>
+  </g>
+  <text x="158" y="488" fill="white" font-family="Georgia, 'Times New Roman', serif" font-size="214" font-weight="900">NASA</text>
+</svg>

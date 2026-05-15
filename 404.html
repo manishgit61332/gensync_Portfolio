@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QK83RRHWED"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QK83RRHWED');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found | GenSync</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Head back to GenSync." />
+  <meta name="theme-color" content="#06060A" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="/src/styles/design-system.css" />
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .error-page {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+    }
+
+    .error-code {
+      font-family: var(--font-display);
+      font-size: clamp(6rem, 20vw, 14rem);
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+
+    .error-title {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .error-desc {
+      font-size: var(--text-base);
+      color: var(--text-secondary);
+      max-width: 420px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Animated background orbs */
+    .error-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .error-orb-1 {
+      width: 500px;
+      height: 500px;
+      background: rgba(255, 119, 1, 0.08);
+      top: -10%;
+      left: -10%;
+      animation: ambientDrift 20s ease-in-out infinite alternate;
+    }
+
+    .error-orb-2 {
+      width: 400px;
+      height: 400px;
+      background: rgba(0, 240, 255, 0.05);
+      bottom: -10%;
+      right: -10%;
+      animation: ambientDrift 25s ease-in-out infinite alternate-reverse;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-orb error-orb-1"></div>
+  <div class="error-orb error-orb-2"></div>
+
+  <div class="error-page">
+    <div class="error-code">404</div>
+    <h1 class="error-title">This page doesn't exist.</h1>
+    <p class="error-desc">
+      The page you're looking for may have been moved, deleted, or never existed in the first place. Let's get you back on track.
+    </p>
+    <div class="error-actions">
+      <a href="/" class="btn btn-primary">← Back to Home</a>
+      <a href="/labs.html" class="btn btn-secondary">Visit Labs</a>
+    </div>
+  </div>
+</body>
+</html>

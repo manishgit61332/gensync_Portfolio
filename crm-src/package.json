@@ -1,0 +1,22 @@
+{
+  "name": "gensync-crm",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "server": "node server.js",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "google-auth-library": "^10.6.2",
+    "googleapis": "^171.4.0",
+    "jsonwebtoken": "^9.0.3",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}

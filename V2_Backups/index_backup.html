@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QK83RRHWED"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QK83RRHWED');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GenSync — Technology, Media & Systems for Startups</title>
+  <meta name="description" content="GenSync is a full-spectrum technology and media agency that builds digital systems, product films, and brand identities for founders who refuse to blend in." />
+  <meta name="keywords" content="GenSync, startup agency, technology agency, product films, brand identity, web development, AI systems, Y Combinator, Google for Startups" />
+  <meta name="author" content="GenSync" />
+  <meta name="theme-color" content="#06060A" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.gensync.in/" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gensync.in/" />
+  <meta property="og:title" content="GenSync — Technology, Media & Systems for Startups" />
+  <meta property="og:description" content="The elite growth and engineering arm for founders from Y Combinator, Google, and more. We build digital systems, product films, and brand identities." />
+  <meta property="og:image" content="https://www.gensync.in/favicon.png" />
+  <meta property="og:site_name" content="GenSync" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.gensync.in/" />
+  <meta name="twitter:title" content="GenSync — Technology, Media & Systems for Startups" />
+  <meta name="twitter:description" content="The elite growth and engineering arm for founders from Y Combinator, Google, and more." />
+  <meta name="twitter:image" content="https://www.gensync.in/favicon.png" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GenSync",
+    "url": "https://www.gensync.in",
+    "logo": "https://www.gensync.in/favicon.png",
+    "description": "Full-spectrum technology and media agency for startups. We build digital systems, product films, and brand identities.",
+    "sameAs": [],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "url": "https://calendly.com/manish-gensync/30min",
+      "contactType": "sales"
+    },
+    "foundingDate": "2024",
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "value": 8
+    },
+    "knowsAbout": ["Web Development", "Product Films", "Brand Identity", "AI Systems", "Digital Marketing"]
+  }
+  </script>
+
+  <!-- Font Preloads -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/styles/design-system.css" />
+  <link rel="stylesheet" href="/src/styles/animations.css" />
+  <link rel="stylesheet" href="/src/styles/sections.css" />
+  <link rel="stylesheet" href="/node_modules/lenis/dist/lenis.css" />
+</head>
+<body>
+
+  <!-- Branded Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-logo">
+      <span class="preloader-gen">Gen</span><span class="preloader-sync">Sync</span>
+    </div>
+  </div>
+
+  <!-- Skip to Content (Accessibility) -->
+  <a href="#hero" class="skip-to-content">Skip to main content</a>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <span class="logo-gen">Gen</span><span class="logo-sync">Sync</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Work</a>
+        <a href="#proof">Proof</a>
+        <a href="#team">Team</a>
+        <a href="/labs.html">Labs</a>
+      </div>
+      <div class="nav-cta">
+        <a href="https://calendly.com/manish-gensync/30min" target="_blank" rel="noopener" class="btn btn-primary">Let's Talk!</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#portfolio">Work</a>
+    <a href="#proof">Proof</a>
+    <a href="#team">Team</a>
+    <a href="/labs.html">Labs</a>
+    <a href="https://calendly.com/manish-gensync/30min" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 1rem;">Book a Call</a>
+  </div>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero">
+    <!-- 3D Wireframe Background -->
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <div class="hero-glow-orb"></div>
+
+    <div class="hero-center">
+      <h1 class="hero-title-massive">
+        Weaponizing<br/>
+        <span class="text-italic accent">Digital</span> Scale.
+      </h1>
+      
+      <p class="hero-tagline">
+        The elite growth and engineering arm for founders from Y Combinator, Google, and more
+      </p>
+
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn btn-primary">See what we've built</a>
+        <a href="https://calendly.com/manish-gensync/30min" target="_blank" rel="noopener" class="btn btn-secondary">Talk to us</a>
+      </div>
+
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="chevron"></div>
+      </div>
+    </div>
+
+    <div class="hero-trust">
+      <p>Trusted by founders from</p>
+      <!-- Desktop Logos -->
+      <div class="trust-logos-wrapper desktop-logos">
+        <div class="trust-logos">
+          <!-- Marquee Original -->
+          <div class="trust-logo-card"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/YC Logo.webp" alt="Y Combinator" /></div><span class="trust-logo-name">Y Combinator</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/IIM_Bangalore_New.webp" alt="IIM Bangalore" /></div><span class="trust-logo-name">IIM Bangalore</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/T_Hub_New.webp" alt="T-Hub" /></div><span class="trust-logo-name">T-Hub</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon bg-white"><img src="/src/assets/logos/IIT_Bombay.webp" alt="IIT Bombay" /></div><span class="trust-logo-name">IIT Bombay</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/Google_For_Startups.webp" alt="Google for Startups" /></div><span class="trust-logo-name">Google for Startups</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/The_Residency_New.webp" alt="The Residency" /></div><span class="trust-logo-name">The Residency</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/IIM_Visakhapatnam.webp" alt="IIM Visakhapatnam" /></div><span class="trust-logo-name">IIM Visakhapatnam</span></div>
+
+          <!-- Marquee Duplicate -->
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/YC Logo.webp" alt="Y Combinator" /></div><span class="trust-logo-name">Y Combinator</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/IIM_Bangalore_New.webp" alt="IIM Bangalore" /></div><span class="trust-logo-name">IIM Bangalore</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/T_Hub_New.webp" alt="T-Hub" /></div><span class="trust-logo-name">T-Hub</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon bg-white"><img src="/src/assets/logos/IIT_Bombay.webp" alt="IIT Bombay" /></div><span class="trust-logo-name">IIT Bombay</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/Google_For_Startups.webp" alt="Google for Startups" /></div><span class="trust-logo-name">Google for Startups</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/The_Residency_New.webp" alt="The Residency" /></div><span class="trust-logo-name">The Residency</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/IIM_Visakhapatnam.webp" alt="IIM Visakhapatnam" /></div><span class="trust-logo-name">IIM Visakhapatnam</span></div>
+        </div>
+      </div>
+
+      <!-- Mobile Logos (2 parallel lines) -->
+      <div class="trust-logos-wrapper mobile-logos" style="display: none;">
+        <div class="trust-logos" style="margin-bottom: var(--space-lg);">
+          <!-- Marquee Original Track 1 -->
+          <div class="trust-logo-card"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/YC Logo.webp" alt="Y Combinator" /></div><span class="trust-logo-name">Y Combinator</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon bg-white"><img src="/src/assets/logos/IIT_Bombay.webp" alt="IIT Bombay" /></div><span class="trust-logo-name">IIT Bombay</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/T_Hub_New.webp" alt="T-Hub" /></div><span class="trust-logo-name">T-Hub</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/The_Residency_New.webp" alt="The Residency" /></div><span class="trust-logo-name">The Residency</span></div>
+          <!-- Marquee Duplicate Track 1 -->
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/YC Logo.webp" alt="Y Combinator" /></div><span class="trust-logo-name">Y Combinator</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon bg-white"><img src="/src/assets/logos/IIT_Bombay.webp" alt="IIT Bombay" /></div><span class="trust-logo-name">IIT Bombay</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/T_Hub_New.webp" alt="T-Hub" /></div><span class="trust-logo-name">T-Hub</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/The_Residency_New.webp" alt="The Residency" /></div><span class="trust-logo-name">The Residency</span></div>
+        </div>
+        
+        <div class="trust-logos" style="animation-direction: reverse; margin-left: -50px;">
+          <!-- Marquee Original Track 2 -->
+          <div class="trust-logo-card"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/Google_For_Startups.webp" alt="Google for Startups" /></div><span class="trust-logo-name">Google for Startups</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/IIM_Visakhapatnam.webp" alt="IIM Visakhapatnam" /></div><span class="trust-logo-name">IIM Visakhapatnam</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/IIM_Bangalore_New.webp" alt="IIM Bangalore" /></div><span class="trust-logo-name">IIM Bangalore</span></div>
+          <!-- Marquee Duplicate Track 2 -->
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/Google_For_Startups.webp" alt="Google for Startups" /></div><span class="trust-logo-name">Google for Startups</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/IIM_Visakhapatnam.webp" alt="IIM Visakhapatnam" /></div><span class="trust-logo-name">IIM Visakhapatnam</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/IIM_Bangalore_New.webp" alt="IIM Bangalore" /></div><span class="trust-logo-name">IIM Bangalore</span></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==================== SERVICES ==================== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-header reveal">
+        <h2 class="section-title">What we actually do<br/><span class="text-gradient">(all of it, in-house)</span></h2>
+        <p class="section-subtitle" style="margin: 0 auto;">No freelancers, no outsourcing. Every project below is handled start-to-finish by our team.</p>
+      </div>
+
+      <div class="services-grid stagger-children reveal-stagger">
+        <div class="service-card reveal glass-shine sc-large" style="--i: 0">
+          <div class="service-number">01</div>
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9l3 3-3 3"/><line x1="14" y1="15" x2="17" y2="15"/></svg></div>
+          <h3>AI Systems & Automation</h3>
+          <p>We build custom AI agents that actually handle your day-to-day — sending emails, managing leads, syncing with your tools. Not chatbot demos. Working systems.</p>
+          <a href="#portfolio" class="service-link" data-filter-trigger="all">Explore Labs →</a>
+        </div>
+
+        <div class="service-card reveal glass-shine sc-medium" style="--i: 1">
+          <div class="service-number">02</div>
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+          <h3>Product Films</h3>
+          <p>Launch films, product teasers, 3D animations, event coverage. We handle the script, shoot, and edit — you get a video you'd actually put money behind.</p>
+          <a href="#portfolio" class="service-link" data-filter-trigger="film">View Reel →</a>
+        </div>
+
+        <div class="service-card reveal glass-shine sc-small" style="--i: 2">
+          <div class="service-number">03</div>
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <h3>Websites</h3>
+          <p>Not templates. We code from scratch — custom animations, real SEO, fast-loading pages that convert. Built to look like you spent 10x what you actually did.</p>
+          <a href="#portfolio" class="service-link" data-filter-trigger="web">See Projects →</a>
+        </div>
+
+        <div class="service-card reveal glass-shine sc-small" style="--i: 3">
+          <div class="service-number">04</div>
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <h3>Branding & Identity</h3>
+          <p>Logo, typography, color system, voice, usage guidelines — the full package. We ship identity systems, not just a logo in 3 variations.</p>
+          <a href="#portfolio" class="service-link" data-filter-trigger="brand">View Identities →</a>
+        </div>
+
+        <div class="service-card reveal glass-shine sc-small" style="--i: 4">
+          <div class="service-number">05</div>
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <h3>Social & Short-Form</h3>
+          <p>We edit and post content for founders with 200k+ audiences. Hooks, pacing, cuts, captions — we handle the grunt work so you can just show up on camera.</p>
+          <a href="#portfolio" class="service-link" data-filter-trigger="social">See Campaigns →</a>
+        </div>
+
+        <div class="service-card reveal glass-shine sc-large" style="--i: 5">
+          <div class="service-number">06</div>
+          <a href="/labs.html" style="text-decoration:none;color:inherit;display:block">
+            <div class="service-icon" style="background:var(--labs-accent-glow);color:var(--labs-accent);border-color:rgba(0,240,255,0.25)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4"/><path d="M15 3h4a2 2 0 012 2v4"/><path d="M9 21H5a2 2 0 01-2-2v-4"/><path d="M15 21h4a2 2 0 002-2v-4"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <h3>GenSync Labs</h3>
+            <p>Our internal R&D. We build the tools we use daily — AI agents, API monitoring, cloud infra — and make them available to the teams we work with.</p>
+            <span class="service-link" style="color:var(--labs-accent)">Enter Labs →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PORTFOLIO ==================== -->
+  <section class="portfolio" id="portfolio">
+    <div class="portfolio-noise"></div>
+    <div class="container">
+      <div class="portfolio-header reveal">
+        <div>
+          <h2 class="section-title">Recent work</h2>
+          <p class="section-subtitle">Case studies, product films, and brand systems — built end-to-end by our team.</p>
+        </div>
+        <div class="portfolio-tabs" id="portfolioTabs">
+          <button class="portfolio-tab active" data-filter="all">All</button>
+          <button class="portfolio-tab" data-filter="web">Websites</button>
+          <button class="portfolio-tab" data-filter="film">Films</button>
+          <button class="portfolio-tab" data-filter="brand">Branding</button>
+          <button class="portfolio-tab" data-filter="social">Social</button>
+        </div>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid">
+
+        <!-- ── Web Projects ── -->
+        <div class="project-card project-card--hero reveal" data-category="web"
+             data-tech="React, Next.js, WebGL" data-industry="Energy Infrastructure">
+          <div class="project-card__media">
+            <img src="/src/assets/Portfolio/website/CME/cme_thumbnail.webp" alt="ConnectME" loading="lazy" />
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">Web Platform & Identity</span>
+              <h3 class="project-card__title">ConnectME</h3>
+              <p class="project-card__desc">Energy infrastructure platform for smart metering and billing connectivity.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">+320% platform adoption</span>
+                <span class="project-card__metric">1.4M connected devices</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="/case-studies/connectme-case-study.pdf" target="_blank" class="project-btn secondary" onclick="event.stopPropagation()">Case Study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+                <a href="https://connectme.biz/" target="_blank" class="project-btn primary" onclick="event.stopPropagation()">Visit Site <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="web"
+             data-tech="HTML, CSS, JavaScript" data-industry="Corporate / Enterprise">
+          <div class="project-card__media">
+            <img src="/src/assets/Portfolio/website/AMES/thumbnail.webp" alt="AMES" loading="lazy" />
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">Corporate Website</span>
+              <h3 class="project-card__title">AMES</h3>
+              <p class="project-card__desc">High-fidelity corporate web presence designed for credibility and conversions.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">+180% demo requests</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="/case-studies/ames-case-study.pdf" target="_blank" class="project-btn secondary" onclick="event.stopPropagation()">Case Study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="web"
+             data-tech="React, Firebase" data-industry="Gaming / Community">
+          <div class="project-card__media">
+            <img src="/src/assets/Portfolio/website/Playa/playa_thumbnail.webp" alt="Playa" loading="lazy" />
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">Gaming Community</span>
+              <h3 class="project-card__title">Playa</h3>
+              <p class="project-card__desc">Community-first gaming platform built around engagement and retention.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">+95% user retention</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="/case-studies/playa-case-study.pdf" target="_blank" class="project-btn secondary" onclick="event.stopPropagation()">Case Study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Film Projects ── -->
+        <div class="project-card reveal" data-category="film" data-youtube="8M6dQsMxPAQ">
+          <div class="project-card__media">
+            <img src="https://i.ytimg.com/vi/8M6dQsMxPAQ/hqdefault.jpg" alt="DetectifyAI" loading="lazy" />
+            <div class="project-card__play">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">AI Product Launch</span>
+              <h3 class="project-card__title">DetectifyAI</h3>
+              <p class="project-card__desc">Launch film for an AI-powered detection platform. Script, shoot, and post.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">30k+ Views</span>
+                <span class="project-card__metric" style="max-width: 170px; white-space: normal; line-height: 1.3">Client got into a Top SF startup Program after it</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="film" data-youtube="inCvbw8sFEY">
+          <div class="project-card__media">
+            <img src="https://i.ytimg.com/vi/inCvbw8sFEY/hqdefault.jpg" alt="ConnectME AI" loading="lazy" />
+            <div class="project-card__play">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">AI Commercial</span>
+              <h3 class="project-card__title">ConnectME AI</h3>
+              <p class="project-card__desc">Product commercial showcasing AI-powered billing intelligence.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">+240% engagement</span>
+                <span class="project-card__metric">2M+ impressions</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="film" data-youtube="vQPAqghlIBM">
+          <div class="project-card__media">
+            <img src="https://i.ytimg.com/vi/vQPAqghlIBM/hqdefault.jpg" alt="ProjectX Infinity" loading="lazy" />
+            <div class="project-card__play">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">3D Teaser</span>
+              <h3 class="project-card__title">ProjectX Infinity</h3>
+              <p class="project-card__desc">3D animated product teaser for a next-gen hardware launch.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">Sold out in 48h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="film" data-youtube="6En4lSzsiOc">
+          <div class="project-card__media">
+            <img src="https://i.ytimg.com/vi/6En4lSzsiOc/hqdefault.jpg" alt="AI Product Showcase" loading="lazy" />
+            <div class="project-card__play">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">Use-Case Film</span>
+              <h3 class="project-card__title">AI Product Showcase</h3>
+              <p class="project-card__desc">Real-world use-case walkthrough for enterprise AI adoption.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">4 enterprise deals closed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="film" data-youtube="1znH3Y0jOkQ">
+          <div class="project-card__media">
+            <img src="https://i.ytimg.com/vi/1znH3Y0jOkQ/hqdefault.jpg" alt="Cultural Fest" loading="lazy" />
+            <div class="project-card__play">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">Aftermovie Teaser</span>
+              <h3 class="project-card__title">Cultural Fest</h3>
+              <p class="project-card__desc">High-energy aftermovie capturing the spirit of a major cultural festival.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">500k+ organic reach</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="film" data-youtube="MN7Ci83ZFhw">
+          <div class="project-card__media">
+            <img src="https://i.ytimg.com/vi/MN7Ci83ZFhw/hqdefault.jpg" alt="BayLink" loading="lazy" />
+            <div class="project-card__play">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">Product Explainer</span>
+              <h3 class="project-card__title">BayLink</h3>
+              <p class="project-card__desc">Explainer video breaking down a complex product into 60 seconds of clarity.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">Halved onboarding time</span>
+                <span class="project-card__metric">15k+ daily users</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="film" data-youtube="YwRZnXPOQbc">
+          <div class="project-card__media">
+            <img src="https://i.ytimg.com/vi/YwRZnXPOQbc/hqdefault.jpg" alt="Street Style Interview" loading="lazy" />
+            <div class="project-card__play">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">Viral Interview</span>
+              <h3 class="project-card__title">Street Style Interview</h3>
+              <p class="project-card__desc">Street-style interview series that crossed 2 Million+ views organically.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">2 Million+ views</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="film" data-youtube="cDT2qDE9QVc">
+          <div class="project-card__media">
+            <img src="https://i.ytimg.com/vi/cDT2qDE9QVc/hqdefault.jpg" alt="Challenge Video" loading="lazy" />
+            <div class="project-card__play">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">Engaging Edit</span>
+              <h3 class="project-card__title">Challenge Video</h3>
+              <p class="project-card__desc">Fast-paced challenge format designed for maximum shareability.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">1.2M+ TikTok plays</span>
+                <span class="project-card__metric">Viral trend status</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="film" data-youtube="s7c9RapKnBg">
+          <div class="project-card__media">
+            <img src="https://i.ytimg.com/vi/s7c9RapKnBg/hqdefault.jpg" alt="Podcast Edit" loading="lazy" />
+            <div class="project-card__play">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">Long Form Edit</span>
+              <h3 class="project-card__title">Podcast Edit</h3>
+              <p class="project-card__desc">Long-form podcast edited for retention, pacing, and visual storytelling.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">+55% average watch time</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="film" data-drive="1BNcHbCYlwGpPVwTtmjZKEfjhSMqdtWJE">
+          <div class="project-card__media">
+            <img src="/src/assets/thumbnails/cinematic_edit_thumbnail.webp" alt="Cinematic Edit" loading="lazy" />
+            <div class="project-card__play">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">Long Form</span>
+              <h3 class="project-card__title">Cinematic Edit</h3>
+              <p class="project-card__desc">Full cinematic edit with color grading and sound design.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">Award-winning visuals</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="film" data-drive="1HroW6s38-IXYSlCSs5qxavbiZAJxLoF8">
+          <div class="project-card__media">
+            <img src="/src/assets/thumbnails/concert_film_thumbnail.webp" alt="Concert Film" loading="lazy" />
+            <div class="project-card__play">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">Live Event</span>
+              <h3 class="project-card__title">Concert Film</h3>
+              <p class="project-card__desc">Multi-camera concert film capturing live atmosphere and energy.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">Global streaming distribution</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Branding Projects ── -->
+        <div class="project-card reveal" data-category="brand" data-link="/case-studies/IFS%20Brand%20Identity.pdf"
+             data-tech="Figma, Illustrator" data-industry="Finance / Consulting">
+          <div class="project-card__media">
+            <img src="/src/assets/Portfolio/Branding and Identity/IFS Thumbnail.webp" alt="IFS" loading="lazy" />
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">Brand Identity System</span>
+              <h3 class="project-card__title">IFS</h3>
+              <p class="project-card__desc">Complete identity system — logo, typography, colors, and usage guidelines.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">Full brand book</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="brand" data-link="/case-studies/ProjectX%20Brand%20Identity.pdf"
+             data-tech="Figma, After Effects" data-industry="Technology / Hardware">
+          <div class="project-card__media">
+            <img src="/src/assets/Portfolio/Branding and Identity/ProjeectX/thumbnail.webp" alt="Project X" loading="lazy" />
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">Brand Strategy</span>
+              <h3 class="project-card__title">Project X</h3>
+              <p class="project-card__desc">Brand strategy and visual identity for a stealth-mode hardware startup.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">Strategy → Launch</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Social ── -->
+        <div class="project-card reveal" data-category="social" data-youtube="e8sbDDwoQsI" data-short="true">
+          <div class="project-card__media">
+            <img src="https://i.ytimg.com/vi/e8sbDDwoQsI/hqdefault.jpg" alt="2025 Showreel" loading="lazy" />
+            <div class="project-card__play">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__content">
+              <span class="project-card__category">Agency Reel</span>
+              <h3 class="project-card__title">2025 Showreel</h3>
+              <p class="project-card__desc">Our 2025 reel — the best of what we shipped this year.</p>
+              <div class="project-card__metrics">
+                <span class="project-card__metric">100+ projects shipped</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- More Selected Work -->
+      <div class="portfolio-more-header reveal">
+        <span class="portfolio-more-label">MORE SELECTED WORK</span>
+      </div>
+
+      <div class="portfolio-compact-grid reveal-stagger">
+        <a href="https://www.wne3.com/" target="_blank" class="compact-card reveal" data-category="web">
+          <div class="compact-info">
+            <h4 class="compact-title">WNE3</h4>
+            <span class="compact-type">Web3 Experience</span>
+          </div>
+          <svg class="compact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+
+        <a href="https://www.aurax.co.in/" target="_blank" class="compact-card reveal" data-category="web">
+          <div class="compact-info">
+            <h4 class="compact-title">Aurax</h4>
+            <span class="compact-type">Corporate Website</span>
+          </div>
+          <svg class="compact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+
+        <a href="https://madscientist.tech/" target="_blank" class="compact-card reveal" data-category="web">
+          <div class="compact-info">
+            <h4 class="compact-title">Mad Scientist</h4>
+            <span class="compact-type">Portfolio / Creative</span>
+          </div>
+          <svg class="compact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+
+        <a href="https://madscientist.tech/" target="_blank" class="compact-card reveal" data-category="web">
+          <div class="compact-info">
+            <h4 class="compact-title">The Build Club</h4>
+            <span class="compact-type">Community Platform</span>
+          </div>
+          <svg class="compact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+
+      <!-- Metrics -->
+      <div class="portfolio-metrics stagger-children reveal-stagger">
+        <div class="metric reveal" style="--i:0">
+          <div class="metric-value"><span class="counter" data-target="30">0</span><span class="accent">+</span></div>
+          <div class="metric-label">Projects Shipped</div>
+        </div>
+        <div class="metric reveal" style="--i:1">
+          <div class="metric-value"><span class="counter" data-target="15">0</span><span class="accent">+</span></div>
+          <div class="metric-label">Brands Built</div>
+        </div>
+        <div class="metric reveal" style="--i:2">
+          <div class="metric-value"><span class="counter" data-target="20">0</span><span class="accent">M+</span></div>
+          <div class="metric-label">Views Generated</div>
+        </div>
+        <div class="metric reveal" style="--i:3">
+          <div class="metric-value"><span class="counter" data-target="8">0</span></div>
+          <div class="metric-label">Team Members</div>
+        </div>
+      </div>
+
+      <!-- Portfolio Section CTA -->
+      <div class="portfolio-cta reveal">
+        <h3 class="portfolio-cta__title">Have a project in mind?</h3>
+        <p class="portfolio-cta__desc">Let's build something exceptional together.</p>
+        <a href="https://calendly.com/manish-gensync/30min" target="_blank" rel="noopener" class="btn btn-primary">Book a call →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SOCIAL PROOF ==================== -->
+  <section class="proof" id="proof">
+    <div class="container">
+      <div class="proof-header reveal">
+        <h2 class="section-title">Founders we've worked with<br/>came from <span class="text-gradient">these programs.</span></h2>
+      </div>
+
+      <!-- Desktop Logos -->
+      <div class="proof-logos-wrapper desktop-logos">
+        <div class="proof-logos reveal">
+          <!-- Marquee Original -->
+          <div class="trust-logo-card"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/YC Logo.webp" alt="Y Combinator" /></div><span class="trust-logo-name">Y Combinator</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/IIM_Bangalore_New.webp" alt="IIM Bangalore" /></div><span class="trust-logo-name">IIM Bangalore</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/T_Hub_New.webp" alt="T-Hub" /></div><span class="trust-logo-name">T-Hub</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon bg-white"><img src="/src/assets/logos/IIT_Bombay.webp" alt="IIT Bombay" /></div><span class="trust-logo-name">IIT Bombay</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/Google_For_Startups.webp" alt="Google for Startups" /></div><span class="trust-logo-name">Google for Startups</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/The_Residency_New.webp" alt="The Residency" /></div><span class="trust-logo-name">The Residency</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/IIM_Visakhapatnam.webp" alt="IIM Visakhapatnam" /></div><span class="trust-logo-name">IIM Visakhapatnam</span></div>
+          
+          <!-- Marquee Duplicate -->
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/YC Logo.webp" alt="Y Combinator" /></div><span class="trust-logo-name">Y Combinator</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/IIM_Bangalore_New.webp" alt="IIM Bangalore" /></div><span class="trust-logo-name">IIM Bangalore</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/T_Hub_New.webp" alt="T-Hub" /></div><span class="trust-logo-name">T-Hub</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon bg-white"><img src="/src/assets/logos/IIT_Bombay.webp" alt="IIT Bombay" /></div><span class="trust-logo-name">IIT Bombay</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/Google_For_Startups.webp" alt="Google for Startups" /></div><span class="trust-logo-name">Google for Startups</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/The_Residency_New.webp" alt="The Residency" /></div><span class="trust-logo-name">The Residency</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/IIM_Visakhapatnam.webp" alt="IIM Visakhapatnam" /></div><span class="trust-logo-name">IIM Visakhapatnam</span></div>
+        </div>
+      </div>
+
+      <!-- Mobile Logos -->
+      <div class="proof-logos-wrapper mobile-logos" style="display: none;">
+        <div class="proof-logos reveal" style="margin-bottom: var(--space-lg);">
+          <!-- Marquee Original Track 1 -->
+          <div class="trust-logo-card"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/YC Logo.webp" alt="Y Combinator" /></div><span class="trust-logo-name">Y Combinator</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon bg-white"><img src="/src/assets/logos/IIT_Bombay.webp" alt="IIT Bombay" /></div><span class="trust-logo-name">IIT Bombay</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/T_Hub_New.webp" alt="T-Hub" /></div><span class="trust-logo-name">T-Hub</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/The_Residency_New.webp" alt="The Residency" /></div><span class="trust-logo-name">The Residency</span></div>
+          <!-- Marquee Duplicate Track 1 -->
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/YC Logo.webp" alt="Y Combinator" /></div><span class="trust-logo-name">Y Combinator</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon bg-white"><img src="/src/assets/logos/IIT_Bombay.webp" alt="IIT Bombay" /></div><span class="trust-logo-name">IIT Bombay</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/T_Hub_New.webp" alt="T-Hub" /></div><span class="trust-logo-name">T-Hub</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/The_Residency_New.webp" alt="The Residency" /></div><span class="trust-logo-name">The Residency</span></div>
+        </div>
+        
+        <div class="proof-logos reveal" style="animation-direction: reverse; margin-left: -50px;">
+          <!-- Marquee Original Track 2 -->
+          <div class="trust-logo-card"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/Google_For_Startups.webp" alt="Google for Startups" /></div><span class="trust-logo-name">Google for Startups</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/IIM_Visakhapatnam.webp" alt="IIM Visakhapatnam" /></div><span class="trust-logo-name">IIM Visakhapatnam</span></div>
+          <div class="trust-logo-card"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/IIM_Bangalore_New.webp" alt="IIM Bangalore" /></div><span class="trust-logo-name">IIM Bangalore</span></div>
+          <!-- Marquee Duplicate Track 2 -->
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/Google_For_Startups.webp" alt="Google for Startups" /></div><span class="trust-logo-name">Google for Startups</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon bg-white zoom-partial"><img src="/src/assets/logos/IIM_Visakhapatnam.webp" alt="IIM Visakhapatnam" /></div><span class="trust-logo-name">IIM Visakhapatnam</span></div>
+          <div class="trust-logo-card" aria-hidden="true"><div class="trust-logo-icon zoom-fit"><img src="/src/assets/logos/IIM_Bangalore_New.webp" alt="IIM Bangalore" /></div><span class="trust-logo-name">IIM Bangalore</span></div>
+        </div>
+      </div>
+
+      <div class="testimonials-container reveal">
+        <div class="testimonial" id="testimonialSlide">
+          <div class="testimonial-quote" id="testimonialQuote">
+            We rebuilt our entire web presence with GenSync. The site loads fast, looks like a Series B company made it, and our demo requests went up 240% in the first month.
+          </div>
+          <div class="testimonial-author" id="testimonialAuthor">David Chen</div>
+          <div class="testimonial-role" id="testimonialRole">CEO at NexusData (YC W23)</div>
+        </div>
+        <div class="testimonial-nav" id="testimonialNav">
+          <button class="testimonial-dot active" data-index="0"></button>
+          <button class="testimonial-dot" data-index="1"></button>
+          <button class="testimonial-dot" data-index="2"></button>
+          <button class="testimonial-dot" data-index="3"></button>
+        </div>
+        <div class="testimonial-progress" id="testimonialProgress">
+          <div class="testimonial-progress-bar" id="testimonialProgressBar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TEAM ==================== -->
+  <section class="team" id="team">
+    <div class="container">
+      <div class="team-header reveal">
+        <h2 class="section-title">The Kitchen</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">Eight people, no departments. Everyone here ships — design, code, video, strategy. You'll talk to the person doing the work, not a project manager.</p>
+      </div>
+
+      <div class="team-grid stagger-children" id="teamGrid">
+        <div class="team-card reveal" style="--i:0">
+          <div class="team-card-img">
+            <img src="/src/assets/team/Manish.webp" alt="Manish" loading="lazy" />
+            <span class="team-id">01</span>
+          </div>
+          <div class="team-card-info">
+            <h4>Manish</h4>
+            <div class="team-role">Head Chef</div>
+            <p class="team-quote">"If I can't explain it in one sentence, it's not done."</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal" style="--i:1">
+          <div class="team-card-img">
+            <img src="/src/assets/team/Amulya.webp" alt="Amulya" loading="lazy" />
+            <span class="team-id">02</span>
+          </div>
+          <div class="team-card-info">
+            <h4>Amulya</h4>
+            <div class="team-role">Visual Lead</div>
+            <p class="team-quote">"Ugly converts, but beautiful endures."</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal" style="--i:2">
+          <div class="team-card-img">
+            <img src="/src/assets/team/Ayush_S.webp" alt="Ayush S" loading="lazy" />
+            <span class="team-id">03</span>
+          </div>
+          <div class="team-card-info">
+            <h4>Ayush S</h4>
+            <div class="team-role">Acquisition</div>
+            <p class="team-quote">"Data doesn't lie, but it can be boring. We make it fun."</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal" style="--i:3">
+          <div class="team-card-img">
+            <img src="/src/assets/team/Mohit.webp" alt="Mohit" loading="lazy" />
+            <span class="team-id">04</span>
+          </div>
+          <div class="team-card-info">
+            <h4>Mohit</h4>
+            <div class="team-role">Operations</div>
+            <p class="team-quote">"Creativity without deadlines is just a dream."</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal" style="--i:4">
+          <div class="team-card-img">
+            <img src="/src/assets/team/Aayush_Mohan.webp" alt="Aayush M" loading="lazy" />
+            <span class="team-id">05</span>
+          </div>
+          <div class="team-card-info">
+            <h4>Aayush M</h4>
+            <div class="team-role">Strategy</div>
+            <p class="team-quote">"The best strategy is usually the one you're avoiding."</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal" style="--i:5">
+          <div class="team-card-img">
+            <img src="/src/assets/team/Ayush_T.webp" alt="Ayush T" loading="lazy" />
+            <span class="team-id">06</span>
+          </div>
+          <div class="team-card-info">
+            <h4>Ayush T</h4>
+            <div class="team-role">Production</div>
+            <p class="team-quote">"We lie in pre-production, not post."</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal" style="--i:6">
+          <div class="team-card-img">
+            <img src="/src/assets/team/Mani_Kanta.webp" alt="Manikanta" loading="lazy" />
+            <span class="team-id">07</span>
+          </div>
+          <div class="team-card-info">
+            <h4>Manikanta</h4>
+            <div class="team-role">Editor & Storyteller</div>
+            <p class="team-quote">"Every cut must advance the story."</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal" style="--i:7">
+          <div class="team-card-img">
+            <img src="/src/assets/team/Crea.webp" alt="CREA" loading="lazy" />
+            <span class="team-id">08</span>
+          </div>
+          <div class="team-card-info">
+            <h4>CREA</h4>
+            <div class="team-role">Operations Robot</div>
+            <p class="team-quote">"Optimizing for maximum Primehood."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="cta-section" id="cta">
+    <div class="cta-orb cta-orb-1"></div>
+    <div class="cta-orb cta-orb-2"></div>
+    <div class="container">
+      <div class="cta-container reveal-scale">
+        <h2 class="section-title">Got a project?<br/><span class="text-gradient">Let's talk about it.</span></h2>
+        <p>30-minute call with Manish, our founder. No sales deck, no follow-up spam — just a straight conversation about what you need and whether we're the right fit.</p>
+        <a href="https://calendly.com/manish-gensync/30min" target="_blank" rel="noopener" class="btn btn-primary">Book a call →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <span class="logo-gen">Gen</span><span class="logo-sync">Sync</span>
+          </a>
+          <p>We build websites, films, brands, and AI systems for startups. 8-person team based in India, working with founders globally.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Work</a>
+          <a href="#team">Team</a>
+          <a href="#cta">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Products</h5>
+          <a href="/labs.html">GenSync Labs</a>
+          <a href="/labs.html#crea">CREA</a>
+          <a href="/labs.html#api-health">API Key Health</a>
+        </div>
+        <div class="footer-col">
+          <h5>Connect</h5>
+          <a href="https://calendly.com/manish-gensync/30min" target="_blank" rel="noopener">Book a Call</a>
+          <a href="https://in.linkedin.com/company/gensync-media" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.instagram.com/gensync.in/" target="_blank" rel="noopener">Instagram</a>
+          <a href="#">Twitter / X</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 GenSync. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="https://in.linkedin.com/company/gensync-media" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://www.instagram.com/gensync.in/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom Portfolio Cursor -->
+  <div class="portfolio-cursor" id="portfolioCursor">View</div>
+
+  <!-- Video Modal -->
+  <div class="video-modal" id="videoModal">
+    <button class="video-modal-close" id="videoModalClose" aria-label="Close video">✕</button>
+    <div class="video-modal-content">
+      <iframe id="videoIframe" src="" allowfullscreen allow="autoplay"></iframe>
+    </div>
+  </div>
+
+  <!-- Page Transition Overlay -->
+  <div class="page-transition" id="pageTransition"></div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Scroll-Depth CTA Banner -->
+  <div class="scroll-cta" id="scrollCta">
+    <div class="scroll-cta-inner">
+      <span>Like what you see?</span>
+      <a href="https://calendly.com/manish-gensync/30min" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.8rem;">Book a 30-min call →</a>
+      <button class="scroll-cta-close" id="scrollCtaClose" aria-label="Close">✕</button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

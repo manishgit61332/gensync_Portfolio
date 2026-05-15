@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GenSync CRM — Executive command center for GenSync Media and Tech agency." />
+  <title>GenSync CRM — Executive Dashboard</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <script type="module" crossorigin src="/crm/assets/index-CNcqIadS.js"></script>
+  <link rel="stylesheet" crossorigin href="/crm/assets/index-CQnTVhTf.css">
+</head>
+<body>
+  <!-- SVG Definitions -->
+  <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+    <linearGradient id="chart-gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.3"></stop>
+      <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"></stop>
+    </linearGradient>
+  </svg>
+
+  <div id="app">
+
+    <!-- ═══════════ SIDEBAR ═══════════ -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <h1>GenSync</h1>
+        <p>Command Center</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-tab="dashboard" id="nav-dashboard">
+          <span class="nav-icon">📊</span>
+          <span>Dashboard</span>
+        </button>
+        <button class="nav-item" data-tab="tasks" id="nav-tasks">
+          <span class="nav-icon">✅</span>
+          <span>Tasks</span>
+          <span class="nav-badge" id="tasks-badge">0</span>
+        </button>
+        <button class="nav-item" data-tab="pipeline" id="nav-pipeline">
+          <span class="nav-icon">🚀</span>
+          <span>Pipeline</span>
+          <span class="nav-badge" id="leads-badge">0</span>
+        </button>
+        <button class="nav-item" data-tab="clients" id="nav-clients">
+          <span class="nav-icon">🏢</span>
+          <span>Clients</span>
+        </button>
+        <button class="nav-item" data-tab="settings" id="nav-settings">
+          <span class="nav-icon">⚙️</span>
+          <span>Settings</span>
+        </button>
+      </nav>
+
+      <button id="sidebar-collapse-btn" class="btn btn-ghost" style="margin: 0 20px 20px; font-size: 0.75rem;">
+        <span class="nav-icon">⇤</span> <span>Collapse</span>
+      </button>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <div class="user-avatar">MS</div>
+          <div class="user-info">
+            <div class="user-name">Manish Sampatrao</div>
+            <div class="user-role">Founder</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ═══════════ MAIN CONTENT ═══════════ -->
+    <main class="main-content">
+
+      <!-- Header -->
+      <header class="header">
+        <div class="greeting-block">
+          <h2>Good afternoon, Mohit.</h2>
+          <p id="page-title">Dashboard</p>
+        </div>
+        <div class="header-actions">
+          <span class="header-time" id="header-time"></span>
+          <button class="btn btn-primary" id="global-add-btn">
+            <span style="font-size:1.1rem; line-height:1;">＋</span> <span id="global-add-label">Add</span>
+          </button>
+          <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        </div>
+      </header>
+
+      <!-- Page Container -->
+      <div class="page-container">
+
+        <!-- ═══════════ DASHBOARD VIEW ═══════════ -->
+        <section class="view active" id="view-dashboard">
+          
+          <!-- Immediate Attention -->
+          <div id="dashboard-alerts"></div>
+          <div id="dashboard-priorities"></div>
+
+          <!-- KPI Stats -->
+          <div class="stats-grid" id="dashboard-stats"></div>
+          
+          <!-- Activity Chart -->
+          <div class="dashboard-section" style="margin-bottom: 48px;">
+            <div class="section-header" style="margin-bottom: 12px;">
+               <div class="section-title">Velocity Over Time</div>
+               <div class="section-subtitle">Lead and workflow activity (Last 7 Days)</div>
+            </div>
+            <div id="dashboard-chart" class="chart-container"></div>
+          </div>
+
+          <!-- Active Clients -->
+          <div class="dashboard-section">
+            <div class="section-header">
+              <div>
+                <div class="section-title">Active Clients</div>
+                <div class="section-subtitle">Currently servicing</div>
+              </div>
+            </div>
+            <div class="clients-mini-grid" id="dashboard-clients"></div>
+          </div>
+
+          <!-- Pipeline Overview -->
+          <div class="dashboard-section">
+            <div class="section-header">
+              <div>
+                <div class="section-title">Pipeline Overview</div>
+                <div class="section-subtitle">Latest leads across all sources</div>
+              </div>
+              <div class="section-actions">
+                <div class="filter-pills" id="dashboard-temp-filter">
+                  <button class="filter-pill active" data-filter="all">All</button>
+                  <button class="filter-pill" data-filter="HOT">🔴 Hot</button>
+                  <button class="filter-pill" data-filter="WARM">🟡 Warm</button>
+                  <button class="filter-pill" data-filter="COLD">⚪ Cold</button>
+                </div>
+              </div>
+            </div>
+            <div class="card-grid" id="dashboard-leads"></div>
+          </div>
+
+          <!-- Today's Tasks -->
+          <div class="dashboard-section">
+            <div class="section-header">
+              <div>
+                <div class="section-title">Today's Tasks</div>
+                <div class="section-subtitle">Pending and in-progress work</div>
+              </div>
+            </div>
+            <div id="dashboard-tasks"></div>
+          </div>
+        </section>
+
+        <!-- ═══════════ TASKS VIEW ═══════════ -->
+        <section class="view" id="view-tasks">
+          <div class="section-header">
+            <div>
+              <div class="section-title">Task Management</div>
+              <div class="section-subtitle">Organize and track team workload</div>
+            </div>
+            <div class="section-actions">
+              <div class="view-toggle" id="tasks-view-toggle">
+                <button class="view-toggle-btn active" data-view="kanban">Kanban</button>
+                <button class="view-toggle-btn" data-view="table">Table</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kanban Board -->
+          <div id="tasks-kanban" class="kanban-board"></div>
+
+          <!-- Table View -->
+          <div id="tasks-table" style="display:none;">
+            <div class="data-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Task</th>
+                    <th>Assignee</th>
+                    <th>Client</th>
+                    <th>Priority</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="tasks-table-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══════════ PIPELINE VIEW ═══════════ -->
+        <section class="view" id="view-pipeline">
+          <div class="section-header">
+            <div>
+              <div class="section-title">Lead Pipeline</div>
+              <div class="section-subtitle">Track prospects through every stage</div>
+            </div>
+            <div class="section-actions">
+              <div class="filter-pills" id="pipeline-stage-filter">
+                <button class="filter-pill active" data-filter="all">All</button>
+                <button class="filter-pill" data-filter="New">New</button>
+                <button class="filter-pill" data-filter="Contacted">Contacted</button>
+                <button class="filter-pill" data-filter="Proposal">Proposal</button>
+                <button class="filter-pill" data-filter="Negotiation">Negotiation</button>
+                <button class="filter-pill" data-filter="Won">Won</button>
+                <button class="filter-pill" data-filter="Lost">Lost</button>
+              </div>
+              <div class="filter-pills" id="pipeline-temp-filter">
+                <button class="filter-pill active" data-filter="all">All</button>
+                <button class="filter-pill" data-filter="HOT">🔴 Hot</button>
+                <button class="filter-pill" data-filter="WARM">🟡 Warm</button>
+                <button class="filter-pill" data-filter="COLD">⚪ Cold</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-grid" id="pipeline-cards"></div>
+        </section>
+
+        <!-- ═══════════ CLIENTS VIEW ═══════════ -->
+        <section class="view" id="view-clients">
+          <div class="section-header">
+            <div>
+              <div class="section-title">Client Roster</div>
+              <div class="section-subtitle">Active engagements and documentation</div>
+            </div>
+          </div>
+          <div id="clients-list" style="display:flex;flex-direction:column;gap:20px;"></div>
+        </section>
+
+        <!-- ═══════════ SETTINGS VIEW ═══════════ -->
+        <section class="view" id="view-settings">
+          <div class="section-header">
+            <div>
+              <div class="section-title">Settings</div>
+              <div class="section-subtitle">Team, sources, and system configuration</div>
+            </div>
+          </div>
+          <div class="settings-grid" id="settings-grid"></div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ═══════════ MODAL OVERLAY ═══════════ -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h2 id="modal-title">Add Item</h2>
+        <button class="modal-close" id="modal-close">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="modal-footer" id="modal-footer"></div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ═══════════ COMMAND PALETTE (CMD+K) ═══════════ -->
+  <div class="cmd-overlay" id="cmd-overlay">
+    <div class="cmd-palette">
+      <div class="cmd-header">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="cmd-input" id="cmd-input" placeholder="Search clients, leads, tasks..." autocomplete="off"/>
+        <kbd style="font-size:0.7rem; color:var(--text-muted); font-family:'Plus Jakarta Sans'; background:rgba(255,255,255,0.05); padding:2px 6px; border-radius:4px;">ESC</kbd>
+      </div>
+      <div class="cmd-results" id="cmd-results"></div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,50 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gensync.in/</loc>
-    <lastmod>2026-02-16</lastmod>
+    <loc>https://www.gensync.in/</loc>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://gensync.in/service/web-design</loc>
-    <lastmod>2026-02-16</lastmod>
+    <loc>https://www.gensync.in/labs.html</loc>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gensync.in/service/brand-id</loc>
-    <lastmod>2026-02-16</lastmod>
+    <loc>https://www.gensync.in/startup-marketing-agency.html</loc>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.gensync.in/b2b-content-marketing.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.gensync.in/founder-personal-branding.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.gensync.in/lead-generation-for-startups.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.gensync.in/blog/</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gensync.in/service/rebranding</loc>
-    <lastmod>2026-02-16</lastmod>
+    <loc>https://www.gensync.in/blog/how-to-get-first-10-b2b-clients.html</loc>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gensync.in/service/video-edit</loc>
-    <lastmod>2026-02-16</lastmod>
+    <loc>https://www.gensync.in/blog/startup-marketing-strategy-2026.html</loc>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gensync.in/service/commercials</loc>
-    <lastmod>2026-02-16</lastmod>
+    <loc>https://www.gensync.in/blog/cold-outreach-that-converts.html</loc>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gensync.in/service/app-design</loc>
-    <lastmod>2026-02-16</lastmod>
+    <loc>https://www.gensync.in/blog/why-startup-content-fails.html</loc>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gensync.in/service/linkedin</loc>
-    <lastmod>2026-02-16</lastmod>
+    <loc>https://www.gensync.in/blog/b2b-lead-generation-startups.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gensync.in/blog/linkedin-strategy-technical-founders.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gensync.in/blog/content-marketing-roi.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gensync.in/blog/startup-growth-channels.html</loc>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

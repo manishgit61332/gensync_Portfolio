@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEODO Work</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/src/styles/design-system.css">
+  <style>
+    body {
+      background: var(--bg-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-2xl) var(--space-md);
+      margin: 0;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 40%, rgba(255, 119, 1, 0.09), transparent 60%),
+        radial-gradient(ellipse 70% 50% at 80% 60%, rgba(204, 95, 0, 0.06), transparent 55%),
+        radial-gradient(ellipse 50% 40% at 50% 80%, rgba(255, 153, 62, 0.05), transparent 50%);
+      animation: ambientDrift 25s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    @keyframes ambientDrift {
+      0% { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.1) translate(-2%, 2%); }
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      width: 100%;
+      max-width: 1200px;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      transition: all var(--duration-normal) var(--ease-out);
+    }
+
+    .video-container:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-container.video-link {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .video-container.video-link img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.68) saturate(0.95);
+      transition: transform var(--duration-slow) var(--ease-out), filter var(--duration-normal) var(--ease-out);
+    }
+
+    .video-container.video-link:hover img {
+      transform: scale(1.04);
+      filter: brightness(0.84) saturate(1.05);
+    }
+
+    .video-container.video-link::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent, rgba(6, 6, 10, 0.72));
+    }
+
+    .watch-pill {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      padding: 0.85rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-full);
+      background: rgba(6, 6, 10, 0.72);
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body>
+  <div class="video-grid">
+    <!-- Video 2 -->
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/WjdRRMsu_w8?rel=0" title="GEODO video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <!-- Video 3 -->
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/J9IADyAoU3M?rel=0" title="GEODO video 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <!-- Video 4 -->
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/io1WunprcBg?rel=0" title="GEODO video 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <!-- Video 5 -->
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/h6NOUjkYiOo?rel=0" title="GEODO video 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <!-- Video 1 opens on YouTube because this upload blocks embeds. -->
+    <a class="video-container video-link" href="https://youtu.be/ZB2eFsk7qPU" target="_blank" rel="noopener">
+      <img src="https://i.ytimg.com/vi/ZB2eFsk7qPU/hqdefault.jpg" alt="GEODO video 1 thumbnail" loading="lazy">
+      <span class="watch-pill">Watch video 1 on YouTube</span>
+    </a>
+  </div>
+</body>
+</html>

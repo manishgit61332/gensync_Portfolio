@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QK83RRHWED"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QK83RRHWED');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ConnectME — Case Study | GenSync</title>
+  <meta name="description" content="How GenSync designed and built ConnectME's web platform and brand identity around its real Industrial IoT proof: 800+ buildings, 500K+ meters, 120+ customers, and 150+ private LoRa networks." />
+  <meta name="theme-color" content="#06060A" />
+  <link rel="canonical" href="https://www.gensync.in/case-studies/connectme.html" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.gensync.in/case-studies/connectme.html" />
+  <meta property="og:title" content="ConnectME — Case Study | GenSync" />
+  <meta property="og:description" content="Smart metering, utility billing, AMR, LoRaWAN, and product communication for ConnectME's Industrial IoT ecosystem." />
+  <meta property="og:image" content="https://www.gensync.in/favicon.png" />
+
+  <link rel="stylesheet" href="/src/styles/design-system.css" />
+  <link rel="stylesheet" href="/src/styles/animations.css" />
+  <link rel="stylesheet" href="/src/styles/sections.css" />
+  <link rel="stylesheet" href="/node_modules/lenis/dist/lenis.css" />
+
+  <style>
+    .case-hero {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: var(--space-4xl) 0 var(--space-3xl);
+      background: linear-gradient(to bottom, transparent 0%, var(--bg-primary) 100%),
+                  url('/assets/case-thumbnails/cme-case-thumb.png') top center/cover no-repeat;
+      position: relative;
+    }
+
+    .case-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(6, 6, 10, 0.7);
+    }
+
+    .case-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .case-category {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: var(--space-md);
+    }
+
+    .case-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: var(--space-lg);
+    }
+
+    .case-subtitle {
+      font-size: var(--text-lg);
+      color: var(--text-secondary);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .case-metrics {
+      display: flex;
+      gap: var(--space-3xl);
+      margin-top: var(--space-3xl);
+      flex-wrap: wrap;
+    }
+
+    .case-metric-value {
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .case-metric-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+    }
+
+    .case-body {
+      padding: var(--space-4xl) 0;
+    }
+
+    .case-section {
+      margin-bottom: var(--space-4xl);
+    }
+
+    .case-section h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      font-weight: 600;
+      margin-bottom: var(--space-lg);
+    }
+
+    .case-section p {
+      font-size: var(--text-base);
+      color: var(--text-secondary);
+      line-height: 1.8;
+      max-width: 720px;
+      margin-bottom: var(--space-lg);
+    }
+
+    .case-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+    }
+
+    .case-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 119, 1, 0.08);
+      border: 1px solid rgba(255, 119, 1, 0.15);
+      color: var(--accent-light);
+    }
+
+    .case-img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      margin: var(--space-xl) 0;
+    }
+
+    .case-cta {
+      text-align: center;
+      padding: var(--space-4xl) 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .case-cta h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      margin-bottom: var(--space-md);
+    }
+
+    .case-cta p {
+      color: var(--text-secondary);
+      margin-bottom: var(--space-xl);
+    }
+
+    .case-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-xl) 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .case-nav a:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip to Content -->
+  <a href="#case-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <span class="logo-gen">Gen</span><span class="logo-sync">Sync</span>
+      </a>
+      <div class="nav-links">
+        <a href="/#services">Services</a>
+        <a href="/#portfolio">Work</a>
+        <a href="/#proof">Proof</a>
+        <a href="/#team">Team</a>
+        <a href="/labs.html">Labs</a>
+      </div>
+      <a href="https://calendly.com/manish-gensync/30min" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Let's Talk!</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="case-hero" id="case-content">
+    <div class="container">
+      <div class="case-category">Web Platform & Identity</div>
+      <h1 class="case-title">ConnectME</h1>
+      <p class="case-subtitle">
+        A UAE-based Industrial IoT manufacturer delivering utility billing, smart metering,
+        AMR, LoRaWAN, cloud connectivity, and leak-detection systems across the GCC.
+      </p>
+      <div class="case-metrics">
+        <div>
+          <div class="case-metric-value">800+</div>
+          <div class="case-metric-label">Buildings Served</div>
+        </div>
+        <div>
+          <div class="case-metric-value">500K+</div>
+          <div class="case-metric-label">Meters Connected</div>
+        </div>
+        <div>
+          <div class="case-metric-value">150+</div>
+          <div class="case-metric-label">Private LoRa Networks</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Body -->
+  <main class="case-body">
+    <div class="container">
+
+      <section class="case-section">
+        <h2>The Challenge</h2>
+        <p>
+          ConnectME already had deep technical proof: UBILL, UENERGY, smart meters,
+          gateways, AMR controllers, M-Bus devices, edge gateways, protocol converters,
+          and leak-detection products.
+        </p>
+        <p>
+          The challenge was making that Industrial IoT ecosystem clear for buyers,
+          consultants, and technical teams without flattening it into generic software copy.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>What We Built</h2>
+        <p>
+          We organized the work around ConnectME's real category: smart metering,
+          utility billing, secure IoT connectivity, and field-ready product communication.
+        </p>
+
+        <h3 style="margin-top: var(--space-xl); margin-bottom: var(--space-sm); color: var(--accent);">Brand Identity</h3>
+        <p>
+          A redesigned identity system covering the ConnectME master brand and product
+          communication for UBILL, UENERGY, UFLO, UCONNECT, and related hardware lines.
+        </p>
+
+        <h3 style="margin-top: var(--space-xl); margin-bottom: var(--space-sm); color: var(--accent);">Web Platform</h3>
+        <p>
+          Website structure for products, solutions, services, work, blog, and about pages
+          so a buyer can move from meter hardware to billing software and deployment context
+          without getting lost.
+        </p>
+
+        <h3 style="margin-top: var(--space-xl); margin-bottom: var(--space-sm); color: var(--accent);">Product Film</h3>
+        <p>
+          Public product explainers and visual assets made for sales decks, buyer review,
+          and product walkthroughs across ConnectME and uBill.
+        </p>
+
+        <div class="case-tags">
+          <span class="case-tag">Smart Metering</span>
+          <span class="case-tag">Utility Billing</span>
+          <span class="case-tag">AMR</span>
+          <span class="case-tag">LoRaWAN</span>
+          <span class="case-tag">Product Communication</span>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>The Results</h2>
+        <p>
+          The proof now comes from ConnectME's own public website: a UAE-based Industrial
+          IoT technology and manufacturing company active since 2016, trusted across
+          800+ buildings, 500K+ meters, 120+ customers, and 150+ private LoRa networks.
+        </p>
+        <p>
+          The GenSync work packages that real scale into a clearer brand, website,
+          brochure, and video layer for the systems ConnectME actually sells: UBILL,
+          UENERGY, UFLO meters, GasKonnect, UCONNECT M-Bus devices, gateways,
+          AMR, and leak-detection products.
+        </p>
+      </section>
+
+      <!-- CTA -->
+      <div class="case-cta">
+        <h2>Want results like this?</h2>
+        <p>Let's talk about your project.</p>
+        <a href="https://calendly.com/manish-gensync/30min" target="_blank" rel="noopener" class="btn btn-primary">Book a call →</a>
+      </div>
+
+      <!-- Navigation -->
+      <div class="case-nav">
+        <a href="/#portfolio">← All Work</a>
+        <a href="/#portfolio">Next Project →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Page Transition -->
+  <div class="page-transition" id="pageTransition"></div>
+
+</body>
+</html>
