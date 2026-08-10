@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         labs: resolve(__dirname, 'labs.html'),
+        careers: resolve(__dirname, 'careers.html'),
         startup_marketing: resolve(__dirname, 'startup-marketing-agency.html'),
         b2b_content_marketing: resolve(__dirname, 'b2b-content-marketing.html'),
         founder_personal_branding: resolve(__dirname, 'founder-personal-branding.html'),
